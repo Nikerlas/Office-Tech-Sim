@@ -16,6 +16,7 @@ public class BuildManager : MonoBehaviour
     public float holdDuration = 1f;
 
     PartSlot hoveredSlot;
+    public List<PartSlot> allSlots = new List<PartSlot>();
 
     void Awake()
     {
@@ -77,6 +78,8 @@ public class BuildManager : MonoBehaviour
     {
         slot.occupied = true;
 
+        TaskManager.Instance.RegisterInstalledPart(currentPartType);
+
         slot.placedPart = currentPreview;
 
         GameObject placedPart = currentPreview;
@@ -130,10 +133,29 @@ public class BuildManager : MonoBehaviour
 
     void RemovePart(PartSlot slot)
     {
+        PartType removedType = slot.allowedType;
+
+        TaskManager.Instance.RemoveInstalledPart(removedType);
+        
         Destroy(slot.placedPart);
 
         slot.placedPart = null;
 
         slot.occupied = false;
+    }
+
+    public void ClearAllParts()
+    {
+        foreach(PartSlot slot in allSlots)
+        {
+            if(slot.occupied)
+            {
+                Destroy(slot.placedPart);
+
+                slot.placedPart = null;
+
+                slot.occupied = false;
+            }
+        }
     }
 }
