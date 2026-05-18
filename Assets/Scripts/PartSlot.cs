@@ -5,4 +5,5 @@ public class PartSlot : MonoBehaviour
     public PartType allowedType;
     public bool occupied;
     public Transform snapPoint;
+    public GameObject placedPart;
 }

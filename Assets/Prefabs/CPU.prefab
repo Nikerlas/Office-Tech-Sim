@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4492217570524433055}
   - component: {fileID: 2689294638091436760}
   - component: {fileID: 979660485543113563}
+  - component: {fileID: -3662234071361225151}
   m_Layer: 0
   m_Name: CPU
   m_TagString: Untagged
@@ -105,3 +106,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-3662234071361225151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6628600685951474869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: decbadb01d4f3a740915566198cc9172, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partType: 0

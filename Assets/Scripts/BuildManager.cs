@@ -11,6 +11,11 @@ public class BuildManager : MonoBehaviour
     public PartType currentPartType;
 
     public GameObject InventoryUI;
+    float holdTimer = 0f;
+
+    public float holdDuration = 1f;
+
+    PartSlot hoveredSlot;
 
     void Awake()
     {
@@ -36,6 +41,7 @@ public class BuildManager : MonoBehaviour
 
     void Update()
     {
+        CheckRemovePart();
         if (currentPreview == null)
             return;
 
@@ -71,6 +77,8 @@ public class BuildManager : MonoBehaviour
     {
         slot.occupied = true;
 
+        slot.placedPart = currentPreview;
+
         GameObject placedPart = currentPreview;
 
         placedPart.transform.position = slot.snapPoint.position;
@@ -79,5 +87,53 @@ public class BuildManager : MonoBehaviour
         currentPreview = null;
 
         InventoryUI.SetActive(true);
+    }
+
+    void CheckRemovePart()
+    {
+        if(currentPreview != null)
+            return;
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if(Physics.Raycast(ray, out RaycastHit hit))
+        {
+            PartSlot slot = hit.collider.GetComponent<PartSlot>();
+
+            if(slot != null && slot.occupied)
+            {
+                hoveredSlot = slot;
+
+                if(Input.GetMouseButton(0))
+                {
+                    holdTimer += Time.deltaTime;
+
+                    if(holdTimer >= holdDuration)
+                    {
+                        RemovePart(slot);
+
+                        holdTimer = 0f;
+                    }
+                }
+
+                if(Input.GetMouseButtonUp(0))
+                {
+                    holdTimer = 0f;
+                }
+            }
+            else
+            {
+                holdTimer = 0f;
+            }
+        }
+    }
+
+    void RemovePart(PartSlot slot)
+    {
+        Destroy(slot.placedPart);
+
+        slot.placedPart = null;
+
+        slot.occupied = false;
     }
 }
