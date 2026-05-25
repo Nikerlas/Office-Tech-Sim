@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dafe6fd2a080d2479c550f872806afe, type: 3}
+  m_Name: Raden Sambung_start
+  m_EditorClassIdentifier: 
+  lines:
+  - speakerName: Raden Sambung
+    dialogueText: 'Good day, shopkeeper.
+
+      Is this where one acquires a PC?'
+  - speakerName: Shopkepper
+    dialogueText: Yep. You looking to build one?
+  - speakerName: Raden Sambung
+    dialogueText: 'Indeed.
+
+      My curiosity toward these modern machines grows
+      stronger each day.'
+  - speakerName: Shopkepper
+    dialogueText: What you gonna use it for?
+  - speakerName: Raden Sambung
+    dialogueText: "Music, knowledge, art\u2026 perhaps a few modern games as well."
+  - speakerName: Shopkepper
+    dialogueText: Nice. Got a budget?
+  - speakerName: Raden Sambung
+    dialogueText: 'Dont talk about any budget.
+
+      Quality and elegance matter
+      far more.'
+  - speakerName: Shopkepper
+    dialogueText: "Got it. I\u2019ll build something clean and powerful."
