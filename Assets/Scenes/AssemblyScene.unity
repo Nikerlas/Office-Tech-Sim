@@ -558,7 +558,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1091,7 +1091,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1661,7 +1661,7 @@ MonoBehaviour:
   allowedType: 0
   occupied: 0
   snapPoint: {fileID: 2123440793}
-  placedPart: {fileID: 0}
+  placedPart: {fileID: 1513655502}
 --- !u!65 &1513655505
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2692,7 +2692,7 @@ MonoBehaviour:
   allowedType: 1
   occupied: 0
   snapPoint: {fileID: 980914538}
-  placedPart: {fileID: 0}
+  placedPart: {fileID: 2031934360}
 --- !u!65 &2031934363
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2708,7 +2708,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

@@ -11,17 +11,17 @@ public class EconomyManager : MonoBehaviour
         Instance = this;
     }
 
-    public void AddMoney(int amount)
+    void Start()
     {
-        GameManager.Instance.currentMoney += amount;
-
+        // Pastikan UI menampilkan uang terbaru dari GameManager saat scene dimulai
         UpdateUI();
-
-        ChapterManager.Instance.CheckChapterUnlock();
     }
 
-    void UpdateUI()
+    public void UpdateUI()
     {
-        moneyText.text = "$ " + GameManager.Instance.currentMoney;
+        if (moneyText != null && GameManager.Instance != null)
+        {
+            moneyText.text = "$ " + GameManager.Instance.currentMoney;
+        }
     }
 }

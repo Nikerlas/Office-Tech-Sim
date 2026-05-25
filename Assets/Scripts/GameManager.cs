@@ -87,4 +87,12 @@ public class GameManager : MonoBehaviour
             Debug.Log("CONTINUE NEXT DAY");
         }
     }
+    public void AddMoney(int amount)
+    {
+        currentMoney += amount;
+        Debug.Log("Uang berhasil ditambahkan di GameManager: " + currentMoney);
+        
+        // Cek chapter unlock jika diperlukan
+        // ChapterManager.Instance.CheckChapterUnlock(); 
+    }
 }
