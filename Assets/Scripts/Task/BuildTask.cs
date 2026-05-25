@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class BuildTask
+[CreateAssetMenu(menuName = "Mission/Build Task")]
+public class BuildTask : ScriptableObject
 {
     public string taskName;
 
     public List<PartType> requiredParts;
+
+    public int rewardMoney;
 }

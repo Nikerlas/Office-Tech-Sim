@@ -1,16 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TaskManager : MonoBehaviour
 {
     public static TaskManager Instance;
 
+    BuildTask currentTask;
+
     public TMP_Text taskText;
-
-    public List<BuildTask> tasks;
-
-    int currentTaskIndex = 0;
 
     List<PartType> installedParts = new List<PartType>();
 
@@ -21,41 +20,51 @@ public class TaskManager : MonoBehaviour
 
     void Start()
     {
+        currentTask = GameManager.Instance.currentTask;
+
+        if (currentTask == null)
+        {
+            Debug.LogError("NO TASK FOUND");
+
+            return;
+        }
+
         UpdateTaskUI();
     }
 
     public void RegisterInstalledPart(PartType part)
     {
-        if(installedParts.Contains(part))
+        if (installedParts.Contains(part))
             return;
 
         installedParts.Add(part);
 
         Debug.Log(part + " Installed");
+
+        UpdateTaskUI();
     }
 
     public void RemoveInstalledPart(PartType part)
     {
-        if(installedParts.Contains(part))
+        if (installedParts.Contains(part))
         {
             installedParts.Remove(part);
 
             Debug.Log(part + " Removed");
+
+            UpdateTaskUI();
         }
     }
 
     public void CheckCurrentTask()
     {
-        if(currentTaskIndex >= tasks.Count)
-             return;
-
-        BuildTask currentTask = tasks[currentTaskIndex];
-
-        foreach(PartType requiredPart in currentTask.requiredParts)
+        foreach (PartType requiredPart
+            in currentTask.requiredParts)
         {
-            if(!installedParts.Contains(requiredPart))
+            if (!installedParts.Contains(requiredPart))
             {
                 Debug.Log("Task Belum Lengkap");
+
                 return;
             }
         }
@@ -65,36 +74,37 @@ public class TaskManager : MonoBehaviour
 
     void TaskComplete()
     {
-        Debug.Log("TASK CLEAR");
+        EconomyManager.Instance.AddMoney(
+            currentTask.rewardMoney
+        );
 
         BuildManager.Instance.ClearAllParts();
 
-        currentTaskIndex++;
-
         installedParts.Clear();
 
-        if(currentTaskIndex >= tasks.Count)
-        {
-            taskText.text = "ALL TASK COMPLETE";
+        GameManager.Instance.returningFromAssembly = true;
 
-            Debug.Log("SEMUA TASK SELESAI");
-
-            return;
-        }
-
-        UpdateTaskUI();
+        SceneManager.LoadScene("DialogueScene");
     }
 
     void UpdateTaskUI()
     {
-        if(currentTaskIndex >= tasks.Count)
+        string display =
+            currentTask.taskName + "\n\n";
+
+        foreach (PartType requiredPart
+            in currentTask.requiredParts)
         {
-            taskText.text = "ALL TASK COMPLETE";
-            return;
+            bool installed =
+                installedParts.Contains(requiredPart);
+
+            string check =
+                installed ? "☑ " : "☐ ";
+
+            display +=
+                check + requiredPart + "\n";
         }
 
-        BuildTask currentTask = tasks[currentTaskIndex];
-
-        taskText.text = currentTask.taskName;
+        taskText.text = display;
     }
 }
