@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dafe6fd2a080d2479c550f872806afe, type: 3}
-  m_Name: SoloMan_Intro
+  m_Script: {fileID: 11500000, guid: 7e3ab3244e2a928489454d10aa28f9b6, type: 3}
+  m_Name: New Day Data
   m_EditorClassIdentifier: 
-  lines:
-  - speakerName: '{PLAYER}'
-    dialogueText: Welcome, What can I help you?
-  - speakerName: SoloMan
-    dialogueText: A PC please
+  startDayDialogue: {fileID: 0}
+  customerJobs: []
+  endDayDialogue: {fileID: 0}

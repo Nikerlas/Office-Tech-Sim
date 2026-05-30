@@ -50,8 +50,17 @@ public class DialogueManager : MonoBehaviour
         DialogueLine line =
             dialogueData.lines[currentIndex];
 
-        speakerText.text = line.speakerName;
-        dialogueText.text = line.dialogueText;
+        speakerText.text =
+            line.speakerName.Replace(
+                "{PLAYER}",
+                GameManager.Instance.playerName
+            );
+
+        dialogueText.text =
+            line.dialogueText.Replace(
+                "{PLAYER}",
+                GameManager.Instance.playerName
+            );
     }
 
     public void NextLine()
@@ -85,7 +94,14 @@ public class DialogueManager : MonoBehaviour
 
         GameManager.Instance.NextCustomer();
 
-        SceneManager.LoadScene("DialogueScene");
+        if (GameManager.Instance.dayFinished)
+        {
+            SceneManager.LoadScene("DayEndScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("DialogueScene");
+        }
 
         Debug.Log("Customer Finished");
     }

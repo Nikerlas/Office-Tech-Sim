@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dafe6fd2a080d2479c550f872806afe, type: 3}
   m_Name: MeyMey_Intro
   m_EditorClassIdentifier: 
-  dialogueType: 1
-  missionTask: {fileID: 11400000, guid: b10e36509403e0d43b364d32730b65bd, type: 2}
   lines:
-  - speakerName: Shopkeeper
+  - speakerName: '{PLAYER}'
     dialogueText: Welcome to the shop, what can I help you?
   - speakerName: Mey Mey
     dialogueText: I want to build a PC, can you build me one?

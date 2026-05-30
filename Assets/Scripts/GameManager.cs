@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public string playerName;
 
     [Header("Progression")]
     public int currentChapterIndex;
@@ -59,10 +60,10 @@ public class GameManager : MonoBehaviour
 
         dayFinished = true;
 
-        CheckChapterComplete();
+        currentCustomerIndex = 0;
     }
 
-    void CheckChapterComplete()
+    void CheckChapterProgress()
     {
         if (currentMoney >= currentChapter.targetMoney)
         {
@@ -74,17 +75,39 @@ public class GameManager : MonoBehaviour
 
             currentCustomerIndex = 0;
 
-            // load next chapter nanti
+            // nanti load chapter berikutnya
         }
         else
         {
-            Debug.Log("TARGET NOT REACHED");
+            Debug.Log("NEXT DAY");
 
+            currentDayIndex++;
+        }
+    }
+
+    public void SleepAndProgress()
+    {
+        dayFinished = false;
+
+        if (currentMoney >= currentChapter.targetMoney)
+        {
+            Debug.Log("CHAPTER COMPLETE");
+
+            currentChapterIndex++;
+
+            currentDayIndex = 0;
+
+            currentCustomerIndex = 0;
+
+            // nanti load chapter berikutnya
+        }
+        else
+        {
             currentDayIndex++;
 
             currentCustomerIndex = 0;
 
-            Debug.Log("CONTINUE NEXT DAY");
+            Debug.Log("NEXT DAY");
         }
     }
 }

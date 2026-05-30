@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3ab3244e2a928489454d10aa28f9b6, type: 3}
   m_Name: Day 1
   m_EditorClassIdentifier: 
+  startDayDialogue: {fileID: 11400000, guid: e6007c34da386c64782c648d8eeffe93, type: 2}
   customerJobs:
   - {fileID: 11400000, guid: 40f0abd82bdc75d4497ac4f832610240, type: 2}
   - {fileID: 11400000, guid: c8067f0011fb26a42b24846fe588814e, type: 2}
   - {fileID: 11400000, guid: c8067f0011fb26a42b24846fe588814e, type: 2}
+  endDayDialogue: {fileID: 11400000, guid: e6007c34da386c64782c648d8eeffe93, type: 2}

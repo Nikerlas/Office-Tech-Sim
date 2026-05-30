@@ -209,29 +209,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 272334058}
-  - component: {fileID: 272334057}
+  - component: {fileID: 272334059}
   m_Layer: 0
-  m_Name: DialogueManager
+  m_Name: StartDayManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &272334057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 272334056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea2eb5dd9bd772f43ab3cb478a230426, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speakerText: {fileID: 1485409116}
-  dialogueText: {fileID: 1176607860}
-  dialogueData: {fileID: 11400000, guid: 06b665eafbe9b964b86eb391ca642aa2, type: 2}
 --- !u!4 &272334058
 Transform:
   m_ObjectHideFlags: 0
@@ -247,6 +232,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 298710422}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &272334059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272334056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83f71364a96b6c94297a5391812a9511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speakerText: {fileID: 1485409116}
+  dialogueText: {fileID: 1176607860}
 --- !u!1 &298710421
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,8 +361,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 272334057}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+      - m_Target: {fileID: 272334059}
+        m_TargetAssemblyTypeName: DayStartManager, Assembly-CSharp
         m_MethodName: NextLine
         m_Mode: 1
         m_Arguments:
@@ -1108,7 +1107,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e44715f790e4ba74d9257cb5b0351e4a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 71692ac893c5f6645ab07f1482b701e8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
