@@ -5,4 +5,7 @@ using UnityEngine;
 public class DialogueData : ScriptableObject
 {
     public List<DialogueLine> lines;
+
+    [Header("Story Event")]
+    public CustomerJob nextForcedCustomer;
 }

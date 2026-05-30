@@ -14,19 +14,25 @@ public class DayEndManager : MonoBehaviour
 
     int currentIndex = 0;
 
+    bool showingStoryEvent;
+    StoryEventData currentStoryEvent;
+
     DialogueData dialogueData;
 
     void Start()
     {
+        currentStoryEvent = GameManager.Instance.GetTodayStoryEvent();
+
         summaryPanel.SetActive(false);
         dialoguePanel.SetActive(true);
 
-        DayData currentDay =
-            GameManager.Instance.currentChapter
-            .days[GameManager.Instance.currentDayIndex];
+        var pool = GameManager.Instance.currentChapter.endDayDialogues;
+
+        int randomIndex =
+            Random.Range(0, pool.Count);
 
         dialogueData =
-            currentDay.endDayDialogue;
+            pool[randomIndex];
 
         ShowLine();
     }
@@ -55,7 +61,7 @@ public class DayEndManager : MonoBehaviour
 
         if (currentIndex >= dialogueData.lines.Count)
         {
-            ShowSummary();
+            EndCurrentDialogue();
 
             return;
         }
@@ -63,8 +69,42 @@ public class DayEndManager : MonoBehaviour
         ShowLine();
     }
 
+    void EndCurrentDialogue()
+    {
+        if (!showingStoryEvent &&
+           currentStoryEvent != null)
+        {
+            showingStoryEvent = true;
+
+            dialogueData =
+                currentStoryEvent.eventDialogue;
+
+            currentIndex = 0;
+
+            ShowLine();
+
+            return;
+        }
+
+        if (currentStoryEvent != null && currentStoryEvent.forcedCustomer != null)
+        {
+            GameManager.Instance.SetForcedCustomer(
+                currentStoryEvent.forcedCustomer
+            );
+        }
+
+        ShowSummary();
+    }
+
     void ShowSummary()
     {
+        if (dialogueData.nextForcedCustomer != null)
+        {
+            GameManager.Instance.SetForcedCustomer(
+                dialogueData.nextForcedCustomer
+            );
+        }
+
         dialoguePanel.SetActive(false);
 
         summaryPanel.SetActive(true);
@@ -80,6 +120,22 @@ public class DayEndManager : MonoBehaviour
     {
         GameManager.Instance.SleepAndProgress();
 
-        SceneManager.LoadScene("DayStartScene");
+        if (GameManager.Instance.chapterComplete)
+        {
+            SceneManager.LoadScene(
+                "ChapterCompleteScene"
+            );
+        }
+        else
+        {
+            SceneManager.LoadScene(
+                "DayStartScene"
+            );
+        }
+    }
+
+    public void SaveGame()
+    {
+        SaveManager.Instance.SaveGame();
     }
 }

@@ -16,7 +16,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         CustomerJob currentJob =
-            GameManager.Instance.GetCurrentCustomerJob();
+            GameManager.Instance.GetCurrentTodayCustomer();
 
         if (GameManager.Instance.returningFromAssembly)
         {
@@ -80,7 +80,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         CustomerJob currentJob =
-            GameManager.Instance.GetCurrentCustomerJob();
+            GameManager.Instance.GetCurrentTodayCustomer();
 
         if (!isResultDialogue)
         {

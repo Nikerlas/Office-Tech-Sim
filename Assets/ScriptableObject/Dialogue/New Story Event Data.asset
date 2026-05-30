@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e42e5b4dcc9eaf41b493c336d6f0f09, type: 3}
-  m_Name: Chapter 1
+  m_Script: {fileID: 11500000, guid: 93d067c3107a2884bad8d2bbe862f45c, type: 3}
+  m_Name: New Story Event Data
   m_EditorClassIdentifier: 
-  chapterName: Chapter 1
-  targetMoney: 1000
-  days:
-  - {fileID: 11400000, guid: 211bff872ad5606448d0cdd5a520d0d0, type: 2}
+  triggerDay: 1
+  eventDialogue: {fileID: 11400000, guid: 3c73f33c11cd10c4d9eae8da478101bb, type: 2}
+  forcedCustomer: {fileID: 11400000, guid: 93fd01125368ddf4082edd665af8e34f, type: 2}

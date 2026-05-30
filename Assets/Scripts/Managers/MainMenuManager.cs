@@ -11,7 +11,7 @@ public class MainMenuManager : MonoBehaviour
         string playerName =
             nameInput.text;
 
-        if(string.IsNullOrEmpty(playerName))
+        if (string.IsNullOrEmpty(playerName))
         {
             playerName = "Shopkeeper";
         }
@@ -22,8 +22,20 @@ public class MainMenuManager : MonoBehaviour
         GameManager.Instance.currentMoney = 0;
         GameManager.Instance.currentDayIndex = 0;
         GameManager.Instance.currentCustomerIndex = 0;
+        GameManager.Instance.GenerateTodayCustomers();
+        GameManager.Instance.currentChapterIndex = 0;
+        GameManager.Instance.LoadCurrentChapter();
 
         SceneManager.LoadScene("DayStartScene");
+    }
+
+    public void ContinueGame()
+    {
+        SaveManager.Instance.LoadGame();
+
+        SceneManager.LoadScene(
+            "DayStartScene"
+        );
     }
 
     public void QuitGame()

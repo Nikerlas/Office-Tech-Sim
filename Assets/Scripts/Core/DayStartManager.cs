@@ -13,12 +13,13 @@ public class DayStartManager : MonoBehaviour
 
     void Start()
     {
-        DayData currentDay =
-            GameManager.Instance.currentChapter
-            .days[GameManager.Instance.currentDayIndex];
+        var pool = GameManager.Instance.currentChapter.startDayDialogues;
+
+        int randomIndex =
+            Random.Range(0, pool.Count);
 
         dialogueData =
-            currentDay.startDayDialogue;
+            pool[randomIndex];
 
         ShowLine();
     }

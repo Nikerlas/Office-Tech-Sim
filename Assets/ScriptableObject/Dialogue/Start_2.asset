@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dafe6fd2a080d2479c550f872806afe, type: 3}
-  m_Name: New Dialogue Data
+  m_Name: Start_2
   m_EditorClassIdentifier: 
   lines:
   - speakerName: '{PLAYER}'
-    dialogueText: ' awidhawodhi {PLAYER}'
+    dialogueText: 'Start 2
+
+'
