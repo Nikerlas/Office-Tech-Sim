@@ -23,6 +23,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c396ed41b25e34d47b5710a51953303b, type: 2}
   - {fileID: 11400000, guid: c396ed41b25e34d47b5710a51953303b, type: 2}
   - {fileID: 11400000, guid: c396ed41b25e34d47b5710a51953303b, type: 2}
+  chapterIntroDialogue: {fileID: 11400000, guid: d6d0afd5a4fbac24db916be1004005cd, type: 2}
+  chapterCompleteDialogue: {fileID: 11400000, guid: e678bbbe943c8a24d8b74c3c1af6e9eb, type: 2}
   startDayDialogues:
   - {fileID: 11400000, guid: e6007c34da386c64782c648d8eeffe93, type: 2}
   - {fileID: 11400000, guid: a1b3d23186f4e314390b4ac06bbafd6a, type: 2}

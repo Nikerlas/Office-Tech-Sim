@@ -1,9 +1,11 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DayEndManager : MonoBehaviour
 {
+    public Image portraitImage;
     public GameObject dialoguePanel;
     public GameObject summaryPanel;
 
@@ -53,6 +55,9 @@ public class DayEndManager : MonoBehaviour
                 "{PLAYER}",
                 GameManager.Instance.playerName
             );
+
+        portraitImage.sprite =
+            line.portrait;
     }
 
     public void NextLine()
@@ -122,8 +127,11 @@ public class DayEndManager : MonoBehaviour
 
         if (GameManager.Instance.chapterComplete)
         {
+            GameManager.Instance.playingChapterComplete =
+                true;
+
             SceneManager.LoadScene(
-                "ChapterCompleteScene"
+                "DialogueScene"
             );
         }
         else

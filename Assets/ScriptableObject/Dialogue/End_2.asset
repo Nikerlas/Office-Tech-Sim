@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: End_2
   m_EditorClassIdentifier: 
   lines:
-  - speakerName: '{PLAYER}'
+  - portrait: {fileID: 21300000, guid: af3758f2bd0679d4d8a91e68141bc1d2, type: 3}
+    speakerName: '{PLAYER}'
     dialogueText: End 2
+  nextForcedCustomer: {fileID: 0}

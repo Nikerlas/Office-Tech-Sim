@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/MainMenuScene.unity
     guid: 47bc79b183c501d479b9aaa84899b905
   - enabled: 1
-    path: Assets/Scenes/Gameplay/DayStartScene.unity
+    path: Assets/Scenes/Gameplay/DayStartScene/DayStartScene.unity
     guid: d70bc247b449af7499e4485fc4823305
   - enabled: 1
     path: Assets/Scenes/Gameplay/DialogueScene.unity

@@ -17,6 +17,8 @@ public class ChapterCompleteManager : MonoBehaviour
 
         GameManager.Instance.GenerateTodayCustomers();
 
-        SceneManager.LoadScene("DayStartScene");
+        GameManager.Instance.playingChapterIntro = true;
+
+        SceneManager.LoadScene("DialogueScene");
     }
 }

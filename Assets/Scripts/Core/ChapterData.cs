@@ -9,6 +9,10 @@ public class ChapterData : ScriptableObject
 
     [Header("Customer Pool")]
     public List<CustomerJob> customerPool;
+    
+    [Header("Chapter Dialogues")]
+    public DialogueData chapterIntroDialogue;
+    public DialogueData chapterCompleteDialogue;
 
     [Header("Day Dialogues")]
     public List<DialogueData> startDayDialogues;

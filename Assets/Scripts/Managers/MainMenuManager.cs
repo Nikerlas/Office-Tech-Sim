@@ -22,11 +22,13 @@ public class MainMenuManager : MonoBehaviour
         GameManager.Instance.currentMoney = 0;
         GameManager.Instance.currentDayIndex = 0;
         GameManager.Instance.currentCustomerIndex = 0;
-        GameManager.Instance.GenerateTodayCustomers();
         GameManager.Instance.currentChapterIndex = 0;
         GameManager.Instance.LoadCurrentChapter();
-
-        SceneManager.LoadScene("DayStartScene");
+        GameManager.Instance.GenerateTodayCustomers();
+        GameManager.Instance.playingChapterIntro = true;
+        SceneManager.LoadScene(
+            "DialogueScene"
+        );
     }
 
     public void ContinueGame()

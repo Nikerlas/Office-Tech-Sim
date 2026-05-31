@@ -1,9 +1,11 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    public Image portraitImage;
     public TMP_Text speakerText;
     public TMP_Text dialogueText;
 
@@ -15,6 +17,30 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
+        if (GameManager.Instance.playingChapterIntro)
+        {
+            dialogueData =
+                GameManager.Instance
+                    .currentChapter
+                    .chapterIntroDialogue;
+
+            ShowLine();
+
+            return;
+        }
+
+        if (GameManager.Instance.playingChapterComplete)
+        {
+            dialogueData =
+                GameManager.Instance
+                    .currentChapter
+                    .chapterCompleteDialogue;
+
+            ShowLine();
+
+            return;
+        }
+
         CustomerJob currentJob =
             GameManager.Instance.GetCurrentTodayCustomer();
 
@@ -45,7 +71,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void ShowLine()
+    public void ShowLine()
     {
         DialogueLine line =
             dialogueData.lines[currentIndex];
@@ -61,6 +87,9 @@ public class DialogueManager : MonoBehaviour
                 "{PLAYER}",
                 GameManager.Instance.playerName
             );
+
+        portraitImage.sprite =
+            line.portrait;
     }
 
     public void NextLine()
@@ -79,6 +108,28 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        if (GameManager.Instance.playingChapterIntro)
+        {
+            GameManager.Instance.playingChapterIntro = false;
+
+            SceneManager.LoadScene(
+                "DayStartScene"
+            );
+
+            return;
+        }
+
+        if (GameManager.Instance.playingChapterComplete)
+        {
+            GameManager.Instance.playingChapterComplete = false;
+
+            SceneManager.LoadScene(
+                "ChapterCompleteScene"
+            );
+
+            return;
+        }
+
         CustomerJob currentJob =
             GameManager.Instance.GetCurrentTodayCustomer();
 

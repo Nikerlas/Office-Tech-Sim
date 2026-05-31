@@ -1,9 +1,11 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DayStartManager : MonoBehaviour
 {
+    public Image portraitImage;
     public TMP_Text speakerText;
     public TMP_Text dialogueText;
 
@@ -40,6 +42,9 @@ public class DayStartManager : MonoBehaviour
                 "{PLAYER}",
                 GameManager.Instance.playerName
             );
+
+        portraitImage.sprite =
+            line.portrait;
     }
 
     public void NextLine()

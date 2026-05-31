@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public bool returningFromAssembly;
     public bool dayFinished;
     public bool chapterComplete;
+    public bool playingChapterIntro;
+    public bool playingChapterComplete;
     #endregion
 
     void Awake()
