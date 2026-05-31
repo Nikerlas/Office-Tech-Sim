@@ -6,8 +6,15 @@ public class MainMenuManager : MonoBehaviour
 {
     public TMP_InputField nameInput;
 
+    void Start() 
+    {
+        AudioManager.Instance.PlayMainMenuBGM();
+    }
+    
     public void StartGame()
     {
+        AudioManager.Instance.PlayButtonClick();
+
         string playerName =
             nameInput.text;
 
@@ -26,9 +33,8 @@ public class MainMenuManager : MonoBehaviour
         GameManager.Instance.LoadCurrentChapter();
         GameManager.Instance.GenerateTodayCustomers();
         GameManager.Instance.playingChapterIntro = true;
-        SceneManager.LoadScene(
-            "DialogueScene"
-        );
+
+        SceneTransitionManager.Instance.FadeToScene("DialogueScene");
     }
 
     public void ContinueGame()

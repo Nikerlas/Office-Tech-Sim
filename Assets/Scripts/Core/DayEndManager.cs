@@ -130,15 +130,11 @@ public class DayEndManager : MonoBehaviour
             GameManager.Instance.playingChapterComplete =
                 true;
 
-            SceneManager.LoadScene(
-                "DialogueScene"
-            );
+            SceneTransitionManager.Instance.FadeToScene("DialogueScene");
         }
         else
         {
-            SceneManager.LoadScene(
-                "DayStartScene"
-            );
+            SceneTransitionManager.Instance.FadeToScene("DayStartScene");
         }
     }
 

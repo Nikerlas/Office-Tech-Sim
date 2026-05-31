@@ -112,9 +112,7 @@ public class DialogueManager : MonoBehaviour
         {
             GameManager.Instance.playingChapterIntro = false;
 
-            SceneManager.LoadScene(
-                "DayStartScene"
-            );
+            SceneTransitionManager.Instance.FadeToScene("DayStartScene");
 
             return;
         }
@@ -123,9 +121,7 @@ public class DialogueManager : MonoBehaviour
         {
             GameManager.Instance.playingChapterComplete = false;
 
-            SceneManager.LoadScene(
-                "ChapterCompleteScene"
-            );
+            SceneTransitionManager.Instance.FadeToScene("ChapterCompleteScene");
 
             return;
         }
@@ -138,7 +134,7 @@ public class DialogueManager : MonoBehaviour
             GameManager.Instance.currentTask =
                 currentJob.buildTask;
 
-            SceneManager.LoadScene("AssemblyScene");
+            SceneTransitionManager.Instance.FadeToScene("AssemblyScene");
 
             return;
         }
@@ -147,11 +143,11 @@ public class DialogueManager : MonoBehaviour
 
         if (GameManager.Instance.dayFinished)
         {
-            SceneManager.LoadScene("DayEndScene");
+            SceneTransitionManager.Instance.FadeToScene("DayEndScene");
         }
         else
         {
-            SceneManager.LoadScene("DialogueScene");
+            SceneTransitionManager.Instance.FadeToScene("DialogueScene");
         }
 
         Debug.Log("Customer Finished");

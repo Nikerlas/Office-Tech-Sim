@@ -15,6 +15,8 @@ public class DayStartManager : MonoBehaviour
 
     void Start()
     {
+        AudioManager.Instance.PlayGameplayBGM();
+        
         var pool = GameManager.Instance.currentChapter.startDayDialogues;
 
         int randomIndex =
@@ -53,7 +55,7 @@ public class DayStartManager : MonoBehaviour
 
         if (currentIndex >= dialogueData.lines.Count)
         {
-            SceneManager.LoadScene("DialogueScene");
+            SceneTransitionManager.Instance.FadeToScene("DialogueScene");
 
             return;
         }

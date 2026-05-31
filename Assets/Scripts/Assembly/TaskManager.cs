@@ -84,7 +84,7 @@ public class TaskManager : MonoBehaviour
 
         GameManager.Instance.returningFromAssembly = true;
 
-        SceneManager.LoadScene("DialogueScene");
+        SceneTransitionManager.Instance.FadeToScene("DialogueScene");
     }
 
     void UpdateTaskUI()
