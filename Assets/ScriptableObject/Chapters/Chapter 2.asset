@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e42e5b4dcc9eaf41b493c336d6f0f09, type: 3}
   m_Name: Chapter 2
   m_EditorClassIdentifier: 
-  chapterName: Chapter 2
+  chapterName: Perjalanan di Kuraton
   targetMoney: 1000
   customerPool:
   - {fileID: 11400000, guid: f8f45d3b533595f45b31ca9f0681531e, type: 2}

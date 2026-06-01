@@ -12,15 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e42e5b4dcc9eaf41b493c336d6f0f09, type: 3}
   m_Name: Chapter 1
   m_EditorClassIdentifier: 
-  chapterName: Chapter 1
+  chapterName: Awal kehidupan di Kuraton
   targetMoney: 1000
   customerPool:
   - {fileID: 11400000, guid: f8f45d3b533595f45b31ca9f0681531e, type: 2}
   - {fileID: 11400000, guid: c396ed41b25e34d47b5710a51953303b, type: 2}
   - {fileID: 11400000, guid: 40f0abd82bdc75d4497ac4f832610240, type: 2}
-  - {fileID: 11400000, guid: c8067f0011fb26a42b24846fe588814e, type: 2}
-  - {fileID: 11400000, guid: f8f45d3b533595f45b31ca9f0681531e, type: 2}
-  - {fileID: 11400000, guid: c396ed41b25e34d47b5710a51953303b, type: 2}
   chapterIntroDialogue: {fileID: 11400000, guid: 4714faf315d84f444ba647762fee94a3, type: 2}
   chapterCompleteDialogue: {fileID: 11400000, guid: 8fda21b3e667a80479b05fa7864912d5, type: 2}
   startDayDialogues:

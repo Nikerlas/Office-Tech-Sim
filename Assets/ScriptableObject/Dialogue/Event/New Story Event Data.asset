@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerDay: 1
   eventDialogue: {fileID: 11400000, guid: 3c73f33c11cd10c4d9eae8da478101bb, type: 2}
-  forcedCustomer: {fileID: 11400000, guid: 93fd01125368ddf4082edd665af8e34f, type: 2}
+  forcedCustomer: {fileID: 11400000, guid: c8067f0011fb26a42b24846fe588814e, type: 2}
