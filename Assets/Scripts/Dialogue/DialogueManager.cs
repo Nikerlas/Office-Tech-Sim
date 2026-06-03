@@ -5,11 +5,37 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    PlayerGender selectedGender;
+    [Header("Character Setup")]
+    public GameObject characterSetupPanel;
+
+    public GameObject genderSelectionPanel;
+
+    public GameObject nameInputPanel;
+
+    public GameObject dialoguePanel;
+
+    public TMP_InputField playerNameInput;
+
     public Image portraitImage;
     public TMP_Text speakerText;
     public TMP_Text dialogueText;
 
     public DialogueData dialogueData;
+
+    [Header("Male Portraits")]
+    public Sprite maleNeutral;
+    public Sprite maleHappy;
+    public Sprite maleAngry;
+    public Sprite maleShocked;
+    public Sprite maleConfused;
+
+    [Header("Female Portraits")]
+    public Sprite femaleNeutral;
+    public Sprite femaleHappy;
+    public Sprite femaleAngry;
+    public Sprite femaleShocked;
+    public Sprite femaleConfused;
 
     int currentIndex = 0;
 
@@ -17,6 +43,40 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
+        Debug.Log(
+            "playingChapterIntro: "
+            + GameManager.Instance.playingChapterIntro
+        );
+
+        Debug.Log(
+            "showCharacterSetup: "
+            + GameManager.Instance.currentChapter.showCharacterSetup
+        );
+
+        Debug.Log(
+            "hasCreatedCharacter: "
+            + GameManager.Instance.hasCreatedCharacter
+        );
+
+        characterSetupPanel.SetActive(false);
+
+        dialoguePanel.SetActive(true);
+
+        Debug.Log("CHECKING CHARACTER SETUP");
+
+        if (GameManager.Instance.playingChapterIntro && GameManager.Instance.currentChapter.showCharacterSetup && !GameManager.Instance.hasCreatedCharacter)
+        {
+            Debug.Log("SHOW CHARACTER SETUP");
+            characterSetupPanel.SetActive(true);
+
+            genderSelectionPanel.SetActive(true);
+
+            nameInputPanel.SetActive(false);
+
+            dialoguePanel.SetActive(false);
+
+            return;
+        }
         if (GameManager.Instance.playingChapterIntro)
         {
             dialogueData =
@@ -71,6 +131,52 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    Sprite GetPlayerPortrait(PlayerExpression expression)
+    {
+        bool isMale =
+            GameManager.Instance.playerGender
+            == PlayerGender.Male;
+
+        if (isMale)
+        {
+            switch (expression)
+            {
+                case PlayerExpression.Happy:
+                    return maleHappy;
+
+                case PlayerExpression.Angry:
+                    return maleAngry;
+
+                case PlayerExpression.Shocked:
+                    return maleShocked;
+
+                case PlayerExpression.Confused:
+                    return maleConfused;
+
+                default:
+                    return maleNeutral;
+            }
+        }
+
+        switch (expression)
+        {
+            case PlayerExpression.Happy:
+                return femaleHappy;
+
+            case PlayerExpression.Angry:
+                return femaleAngry;
+
+            case PlayerExpression.Shocked:
+                return femaleShocked;
+
+            case PlayerExpression.Confused:
+                return femaleConfused;
+
+            default:
+                return femaleNeutral;
+        }
+    }
+
     public void ShowLine()
     {
         DialogueLine line =
@@ -88,8 +194,18 @@ public class DialogueManager : MonoBehaviour
                 GameManager.Instance.playerName
             );
 
-        portraitImage.sprite =
-            line.portrait;
+        if (line.usePlayerPortrait)
+        {
+            portraitImage.sprite =
+                GetPlayerPortrait(
+                    line.playerExpression
+                );
+        }
+        else
+        {
+            portraitImage.sprite =
+                line.portrait;
+        }
     }
 
     public void NextLine()
@@ -151,5 +267,58 @@ public class DialogueManager : MonoBehaviour
         }
 
         Debug.Log("Customer Finished");
+    }
+
+    public void SelectMale()
+    {
+        selectedGender =
+            PlayerGender.Male;
+
+        genderSelectionPanel.SetActive(false);
+
+        nameInputPanel.SetActive(true);
+    }
+
+    public void SelectFemale()
+    {
+        selectedGender =
+            PlayerGender.Female;
+
+        genderSelectionPanel.SetActive(false);
+
+        nameInputPanel.SetActive(true);
+    }
+
+    public void ConfirmCharacter()
+    {
+        string playerName =
+            playerNameInput.text;
+
+        if (string.IsNullOrWhiteSpace(playerName))
+        {
+            playerName = "Shopkeeper";
+        }
+
+        GameManager.Instance.playerName =
+            playerName;
+
+        GameManager.Instance.playerGender =
+            selectedGender;
+
+        GameManager.Instance.hasCreatedCharacter =
+            true;
+
+        characterSetupPanel.SetActive(false);
+
+        dialoguePanel.SetActive(true);
+
+        dialogueData =
+            GameManager.Instance
+                .currentChapter
+                .chapterIntroDialogue;
+
+        currentIndex = 0;
+
+        ShowLine();
     }
 }

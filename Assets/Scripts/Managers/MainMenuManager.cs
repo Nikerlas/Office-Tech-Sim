@@ -6,26 +6,17 @@ public class MainMenuManager : MonoBehaviour
 {
     public TMP_InputField nameInput;
 
-    void Start() 
+    void Start()
     {
         AudioManager.Instance.PlayMainMenuBGM();
     }
-    
+
     public void StartGame()
     {
         AudioManager.Instance.PlayButtonClick();
 
-        string playerName =
-            nameInput.text;
-
-        if (string.IsNullOrEmpty(playerName))
-        {
-            playerName = "Shopkeeper";
-        }
-
-        GameManager.Instance.playerName =
-            playerName;
-
+        GameManager.Instance.playerName = "";
+        GameManager.Instance.hasCreatedCharacter = false;
         GameManager.Instance.currentMoney = 0;
         GameManager.Instance.currentDayIndex = 0;
         GameManager.Instance.currentCustomerIndex = 0;

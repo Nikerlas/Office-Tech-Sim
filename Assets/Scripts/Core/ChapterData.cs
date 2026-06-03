@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Game/Chapter Data")]
 public class ChapterData : ScriptableObject
 {
+    public bool showCharacterSetup;
     public string chapterName;
     public int targetMoney;
 

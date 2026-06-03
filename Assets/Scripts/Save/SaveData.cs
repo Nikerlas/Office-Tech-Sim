@@ -8,4 +8,8 @@ public class SaveData
     public int currentChapterIndex;
 
     public int currentDayIndex;
+
+    public bool hasCreatedCharacter;
+
+    public PlayerGender playerGender;
 }

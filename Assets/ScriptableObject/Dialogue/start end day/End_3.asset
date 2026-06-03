@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: End_3
   m_EditorClassIdentifier: 
   lines:
-  - portrait: {fileID: 21300000, guid: af3758f2bd0679d4d8a91e68141bc1d2, type: 3}
+  - portrait: {fileID: 21300000, guid: 9a543a083f55fae4ca9e0ab42c76a01b, type: 3}
     speakerName: '{PLAYER}'
     dialogueText: A few do. That's enough for today.
-  - portrait: {fileID: 21300000, guid: af3758f2bd0679d4d8a91e68141bc1d2, type: 3}
+  - portrait: {fileID: 21300000, guid: f942c4ae104c6fa41a05a77092179d5a, type: 3}
     speakerName: '{PLAYER}'
     dialogueText: And we'll do even better tomorrow.
   nextForcedCustomer: {fileID: 0}

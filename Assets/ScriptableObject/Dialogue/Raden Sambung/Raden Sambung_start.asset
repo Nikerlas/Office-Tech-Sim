@@ -13,27 +13,52 @@ MonoBehaviour:
   m_Name: Raden Sambung_start
   m_EditorClassIdentifier: 
   lines:
-  - speakerName: Raden Sambung
+  - portrait: {fileID: 0}
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Raden Sambung
     dialogueText: 'Good day, shopkeeper.
 
       Is this where one acquires a PC?'
-  - speakerName: Shopkepper
+  - portrait: {fileID: 0}
+    usePlayerPortrait: 1
+    playerExpression: 0
+    speakerName: Shopkepper
     dialogueText: Yep. You looking to build one?
-  - speakerName: Raden Sambung
+  - portrait: {fileID: 0}
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Raden Sambung
     dialogueText: 'Indeed.
 
       My curiosity toward these modern machines grows
       stronger each day.'
-  - speakerName: Shopkepper
+  - portrait: {fileID: 0}
+    usePlayerPortrait: 1
+    playerExpression: 4
+    speakerName: Shopkepper
     dialogueText: What you gonna use it for?
-  - speakerName: Raden Sambung
+  - portrait: {fileID: 0}
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Raden Sambung
     dialogueText: "Music, knowledge, art\u2026 perhaps a few modern games as well."
-  - speakerName: Shopkepper
+  - portrait: {fileID: 0}
+    usePlayerPortrait: 1
+    playerExpression: 1
+    speakerName: Shopkepper
     dialogueText: Nice. Got a budget?
-  - speakerName: Raden Sambung
+  - portrait: {fileID: 0}
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Raden Sambung
     dialogueText: 'Dont talk about any budget.
 
       Quality and elegance matter
       far more.'
-  - speakerName: Shopkepper
+  - portrait: {fileID: 0}
+    usePlayerPortrait: 1
+    playerExpression: 1
+    speakerName: Shopkepper
     dialogueText: "Got it. I\u2019ll build something clean and powerful."
+  nextForcedCustomer: {fileID: 0}

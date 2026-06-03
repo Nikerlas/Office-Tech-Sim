@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
     #region Variables
     public static GameManager Instance;
     public string playerName;
+    public PlayerGender playerGender;
+    public bool hasCreatedCharacter;
 
     [Header("Customer")]
     public List<CustomerJob> todayCustomers =

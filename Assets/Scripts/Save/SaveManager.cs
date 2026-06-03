@@ -6,7 +6,7 @@ public class SaveManager : MonoBehaviour
 
     void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
 
@@ -25,6 +25,15 @@ public class SaveManager : MonoBehaviour
 
         data.playerName =
             GameManager.Instance.playerName;
+
+        data.playerName =
+            GameManager.Instance.playerName;
+
+        data.playerGender =
+            GameManager.Instance.playerGender;
+
+        data.hasCreatedCharacter =
+            GameManager.Instance.hasCreatedCharacter;
 
         data.currentMoney =
             GameManager.Instance.currentMoney;
@@ -50,7 +59,7 @@ public class SaveManager : MonoBehaviour
 
     public void LoadGame()
     {
-        if(!PlayerPrefs.HasKey("SaveData"))
+        if (!PlayerPrefs.HasKey("SaveData"))
         {
             Debug.Log("NO SAVE FOUND");
 
@@ -65,6 +74,12 @@ public class SaveManager : MonoBehaviour
 
         GameManager.Instance.playerName =
             data.playerName;
+
+        GameManager.Instance.playerGender =
+            data.playerGender;
+
+        GameManager.Instance.hasCreatedCharacter =
+            data.hasCreatedCharacter;
 
         GameManager.Instance.currentMoney =
             data.currentMoney;

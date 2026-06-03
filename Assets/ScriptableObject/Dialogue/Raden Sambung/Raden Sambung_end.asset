@@ -13,14 +13,27 @@ MonoBehaviour:
   m_Name: Raden Sambung_end
   m_EditorClassIdentifier: 
   lines:
-  - speakerName: Shopkepper
+  - portrait: {fileID: 0}
+    usePlayerPortrait: 1
+    playerExpression: 0
+    speakerName: Shopkepper
     dialogueText: "Your PC\u2019s done, sir."
-  - speakerName: Raden Sambung
+  - portrait: {fileID: 0}
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Raden Sambung
     dialogueText: "Magnificent\u2026 truly a machine worthy of admiration."
-  - speakerName: Shopkepper
+  - portrait: {fileID: 0}
+    usePlayerPortrait: 1
+    playerExpression: 1
+    speakerName: Shopkepper
     dialogueText: Haha, enjoy the setup.
-  - speakerName: Shopkepper
+  - portrait: {fileID: 0}
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Shopkepper
     dialogueText: 'You have my gratitude, my friend.
 
       Your craftsmanship shall
       not be forgotten.'
+  nextForcedCustomer: {fileID: 0}
