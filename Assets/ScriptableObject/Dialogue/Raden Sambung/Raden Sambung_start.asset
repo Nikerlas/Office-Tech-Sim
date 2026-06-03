@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Raden Sambung_start
   m_EditorClassIdentifier: 
   lines:
-  - portrait: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: 36c0a0d9341166e488d5f7862c5ce6a5, type: 3}
+    portraitSide: 0
     usePlayerPortrait: 0
     playerExpression: 0
     speakerName: Raden Sambung
@@ -21,11 +22,13 @@ MonoBehaviour:
 
       Is this where one acquires a PC?'
   - portrait: {fileID: 0}
+    portraitSide: 1
     usePlayerPortrait: 1
     playerExpression: 0
-    speakerName: Shopkepper
+    speakerName: '{PLAYER}'
     dialogueText: Yep. You looking to build one?
-  - portrait: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: 36c0a0d9341166e488d5f7862c5ce6a5, type: 3}
+    portraitSide: 0
     usePlayerPortrait: 0
     playerExpression: 0
     speakerName: Raden Sambung
@@ -34,21 +37,25 @@ MonoBehaviour:
       My curiosity toward these modern machines grows
       stronger each day.'
   - portrait: {fileID: 0}
+    portraitSide: 1
     usePlayerPortrait: 1
     playerExpression: 4
-    speakerName: Shopkepper
+    speakerName: '{PLAYER}'
     dialogueText: What you gonna use it for?
-  - portrait: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: 36c0a0d9341166e488d5f7862c5ce6a5, type: 3}
+    portraitSide: 0
     usePlayerPortrait: 0
     playerExpression: 0
     speakerName: Raden Sambung
     dialogueText: "Music, knowledge, art\u2026 perhaps a few modern games as well."
   - portrait: {fileID: 0}
+    portraitSide: 1
     usePlayerPortrait: 1
     playerExpression: 1
-    speakerName: Shopkepper
+    speakerName: '{PLAYER}'
     dialogueText: Nice. Got a budget?
-  - portrait: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: 36c0a0d9341166e488d5f7862c5ce6a5, type: 3}
+    portraitSide: 0
     usePlayerPortrait: 0
     playerExpression: 0
     speakerName: Raden Sambung
@@ -57,8 +64,9 @@ MonoBehaviour:
       Quality and elegance matter
       far more.'
   - portrait: {fileID: 0}
+    portraitSide: 1
     usePlayerPortrait: 1
     playerExpression: 1
-    speakerName: Shopkepper
+    speakerName: '{PLAYER}'
     dialogueText: "Got it. I\u2019ll build something clean and powerful."
   nextForcedCustomer: {fileID: 0}

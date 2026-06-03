@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class DayStartManager : MonoBehaviour
 {
-    public Image portraitImage;
+    public PortraitSlot leftPortrait;
+    public PortraitSlot rightPortrait;
     public TMP_Text speakerText;
     public TMP_Text dialogueText;
 
@@ -16,7 +17,7 @@ public class DayStartManager : MonoBehaviour
     void Start()
     {
         AudioManager.Instance.PlayGameplayBGM();
-        
+
         var pool = GameManager.Instance.currentChapter.startDayDialogues;
 
         int randomIndex =
@@ -30,23 +31,13 @@ public class DayStartManager : MonoBehaviour
 
     void ShowLine()
     {
-        DialogueLine line =
-            dialogueData.lines[currentIndex];
-
-        speakerText.text =
-            line.speakerName.Replace(
-                "{PLAYER}",
-                GameManager.Instance.playerName
-            );
-
-        dialogueText.text =
-            line.dialogueText.Replace(
-                "{PLAYER}",
-                GameManager.Instance.playerName
-            );
-
-        portraitImage.sprite =
-            line.portrait;
+        DialoguePresenter.ShowLine(
+            dialogueData.lines[currentIndex],
+            speakerText,
+            dialogueText,
+            leftPortrait,
+            rightPortrait
+        );
     }
 
     public void NextLine()

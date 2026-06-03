@@ -13,7 +13,16 @@ MonoBehaviour:
   m_Name: SoloMan_Intro
   m_EditorClassIdentifier: 
   lines:
-  - speakerName: '{PLAYER}'
+  - portrait: {fileID: 0}
+    portraitSide: 0
+    usePlayerPortrait: 1
+    playerExpression: 0
+    speakerName: '{PLAYER}'
     dialogueText: Welcome, What can I help you?
-  - speakerName: SoloMan
+  - portrait: {fileID: 0}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: SoloMan
     dialogueText: A PC please
+  nextForcedCustomer: {fileID: 0}

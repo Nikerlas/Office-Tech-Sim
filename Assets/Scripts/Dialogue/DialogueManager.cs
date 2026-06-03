@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     PlayerGender selectedGender;
+    public CharacterData playerMale;
+    public CharacterData playerFemale;
+
     [Header("Character Setup")]
     public GameObject characterSetupPanel;
 
@@ -17,7 +20,11 @@ public class DialogueManager : MonoBehaviour
 
     public TMP_InputField playerNameInput;
 
-    public Image portraitImage;
+    public PortraitSlot leftPortrait;
+
+    public PortraitSlot rightPortrait;
+
+    // public Image portraitImage;
     public TMP_Text speakerText;
     public TMP_Text dialogueText;
 
@@ -40,6 +47,38 @@ public class DialogueManager : MonoBehaviour
     int currentIndex = 0;
 
     bool isResultDialogue;
+
+    CharacterData GetPlayerCharacter()
+    {
+        return GameManager.Instance.playerGender
+            == PlayerGender.Male
+            ? playerMale
+            : playerFemale;
+    }
+
+    Sprite GetPortrait(
+    CharacterData character,
+    CharacterExpression expression
+)
+    {
+        switch (expression)
+        {
+            case CharacterExpression.Happy:
+                return character.happy;
+
+            case CharacterExpression.Angry:
+                return character.angry;
+
+            case CharacterExpression.Shocked:
+                return character.shocked;
+
+            case CharacterExpression.Confused:
+                return character.confused;
+
+            default:
+                return character.neutral;
+        }
+    }
 
     void Start()
     {
@@ -177,35 +216,15 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void ShowLine()
+    void ShowLine()
     {
-        DialogueLine line =
-            dialogueData.lines[currentIndex];
-
-        speakerText.text =
-            line.speakerName.Replace(
-                "{PLAYER}",
-                GameManager.Instance.playerName
-            );
-
-        dialogueText.text =
-            line.dialogueText.Replace(
-                "{PLAYER}",
-                GameManager.Instance.playerName
-            );
-
-        if (line.usePlayerPortrait)
-        {
-            portraitImage.sprite =
-                GetPlayerPortrait(
-                    line.playerExpression
-                );
-        }
-        else
-        {
-            portraitImage.sprite =
-                line.portrait;
-        }
+        DialoguePresenter.ShowLine(
+            dialogueData.lines[currentIndex],
+            speakerText,
+            dialogueText,
+            leftPortrait,
+            rightPortrait
+        );
     }
 
     public void NextLine()

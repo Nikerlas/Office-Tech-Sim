@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class DayEndManager : MonoBehaviour
 {
-    public Image portraitImage;
+    public PortraitSlot leftPortrait;
+    public PortraitSlot rightPortrait;
     public GameObject dialoguePanel;
     public GameObject summaryPanel;
 
@@ -41,23 +42,13 @@ public class DayEndManager : MonoBehaviour
 
     void ShowLine()
     {
-        DialogueLine line =
-            dialogueData.lines[currentIndex];
-
-        speakerText.text =
-            line.speakerName.Replace(
-                "{PLAYER}",
-                GameManager.Instance.playerName
-            );
-
-        dialogueText.text =
-            line.dialogueText.Replace(
-                "{PLAYER}",
-                GameManager.Instance.playerName
-            );
-
-        portraitImage.sprite =
-            line.portrait;
+        DialoguePresenter.ShowLine(
+            dialogueData.lines[currentIndex],
+            speakerText,
+            dialogueText,
+            leftPortrait,
+            rightPortrait
+        );
     }
 
     public void NextLine()

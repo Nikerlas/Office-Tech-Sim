@@ -5,6 +5,8 @@ public class DialogueLine
 {
     public Sprite portrait;
 
+    public PortraitSide portraitSide;
+
     public bool usePlayerPortrait;
 
     public PlayerExpression playerExpression;
