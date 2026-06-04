@@ -13,6 +13,7 @@ public class DialogueLine
 
     public string speakerName;
 
-    [TextArea(3,5)]
+    [TextArea(3, 5)]
     public string dialogueText;
+    public PortraitAnimation portraitAnimation;
 }

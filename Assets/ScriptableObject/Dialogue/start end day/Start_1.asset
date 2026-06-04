@@ -13,10 +13,46 @@ MonoBehaviour:
   m_Name: Start_1
   m_EditorClassIdentifier: 
   lines:
-  - portrait: {fileID: 21300000, guid: 9a543a083f55fae4ca9e0ab42c76a01b, type: 3}
+  - portrait: {fileID: 0}
+    portraitSide: 1
+    usePlayerPortrait: 1
+    playerExpression: 2
     speakerName: '{PLAYER}'
     dialogueText: Let's see what today brings.
-  - portrait: {fileID: 21300000, guid: f942c4ae104c6fa41a05a77092179d5a, type: 3}
+    portraitAnimation: 1
+  - portrait: {fileID: 0}
+    portraitSide: 1
+    usePlayerPortrait: 1
+    playerExpression: 3
     speakerName: '{PLAYER}'
-    dialogueText: Got a good feeling about today.
+    dialogueText: Oh wait a cat
+    portraitAnimation: 1
+  - portrait: {fileID: 0}
+    portraitSide: 1
+    usePlayerPortrait: 0
+    playerExpression: 2
+    speakerName: '{PLAYER}'
+    dialogueText: ...
+    portraitAnimation: 0
+  - portrait: {fileID: 0}
+    portraitSide: 1
+    usePlayerPortrait: 0
+    playerExpression: 3
+    speakerName: '{PLAYER}'
+    dialogueText: ......
+    portraitAnimation: 0
+  - portrait: {fileID: 0}
+    portraitSide: 1
+    usePlayerPortrait: 0
+    playerExpression: 3
+    speakerName: '{PLAYER}'
+    dialogueText: ......
+    portraitAnimation: 0
+  - portrait: {fileID: 0}
+    portraitSide: 1
+    usePlayerPortrait: 1
+    playerExpression: 3
+    speakerName: '{PLAYER}'
+    dialogueText: NYAAAA!!!!!
+    portraitAnimation: 0
   nextForcedCustomer: {fileID: 0}

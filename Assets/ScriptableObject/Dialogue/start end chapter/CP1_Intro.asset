@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - portrait: {fileID: 0}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 2
     speakerName: ' '
     dialogueText: 'Welcome to Kuraton.
 
@@ -22,6 +25,9 @@ MonoBehaviour:
 
 '
   - portrait: {fileID: 0}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
     speakerName: ' '
     dialogueText: Build PCs, serve customers, earn trust, and grow your business.
       Every successful company starts somewhere. This is your beginning.

@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public PlayerGender playerGender;
     public bool hasCreatedCharacter;
 
+    public CharacterData playerMale;
+    public CharacterData playerFemale;
+
     [Header("Customer")]
     public List<CustomerJob> todayCustomers =
     new List<CustomerJob>();

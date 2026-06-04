@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     PlayerGender selectedGender;
-    public CharacterData playerMale;
-    public CharacterData playerFemale;
 
     [Header("Character Setup")]
     public GameObject characterSetupPanel;
@@ -21,6 +19,7 @@ public class DialogueManager : MonoBehaviour
     public TMP_InputField playerNameInput;
 
     public PortraitSlot leftPortrait;
+    public PortraitSlot centerPortrait;
 
     public PortraitSlot rightPortrait;
 
@@ -30,55 +29,11 @@ public class DialogueManager : MonoBehaviour
 
     public DialogueData dialogueData;
 
-    [Header("Male Portraits")]
-    public Sprite maleNeutral;
-    public Sprite maleHappy;
-    public Sprite maleAngry;
-    public Sprite maleShocked;
-    public Sprite maleConfused;
-
-    [Header("Female Portraits")]
-    public Sprite femaleNeutral;
-    public Sprite femaleHappy;
-    public Sprite femaleAngry;
-    public Sprite femaleShocked;
-    public Sprite femaleConfused;
+    public DialogueTyper dialogueTyper;
 
     int currentIndex = 0;
 
     bool isResultDialogue;
-
-    CharacterData GetPlayerCharacter()
-    {
-        return GameManager.Instance.playerGender
-            == PlayerGender.Male
-            ? playerMale
-            : playerFemale;
-    }
-
-    Sprite GetPortrait(
-    CharacterData character,
-    CharacterExpression expression
-)
-    {
-        switch (expression)
-        {
-            case CharacterExpression.Happy:
-                return character.happy;
-
-            case CharacterExpression.Angry:
-                return character.angry;
-
-            case CharacterExpression.Shocked:
-                return character.shocked;
-
-            case CharacterExpression.Confused:
-                return character.confused;
-
-            default:
-                return character.neutral;
-        }
-    }
 
     void Start()
     {
@@ -105,7 +60,10 @@ public class DialogueManager : MonoBehaviour
 
         if (GameManager.Instance.playingChapterIntro && GameManager.Instance.currentChapter.showCharacterSetup && !GameManager.Instance.hasCreatedCharacter)
         {
-            Debug.Log("SHOW CHARACTER SETUP");
+            leftPortrait.gameObject.SetActive(false);
+            centerPortrait.gameObject.SetActive(false);
+            rightPortrait.gameObject.SetActive(false);
+
             characterSetupPanel.SetActive(true);
 
             genderSelectionPanel.SetActive(true);
@@ -170,50 +128,30 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    Sprite GetPlayerPortrait(PlayerExpression expression)
+    void Update()
     {
-        bool isMale =
-            GameManager.Instance.playerGender
-            == PlayerGender.Male;
-
-        if (isMale)
+        if (
+            Input.GetKeyDown(
+                KeyCode.Space
+            )
+        )
         {
-            switch (expression)
-            {
-                case PlayerExpression.Happy:
-                    return maleHappy;
-
-                case PlayerExpression.Angry:
-                    return maleAngry;
-
-                case PlayerExpression.Shocked:
-                    return maleShocked;
-
-                case PlayerExpression.Confused:
-                    return maleConfused;
-
-                default:
-                    return maleNeutral;
-            }
+            NextLine();
         }
 
-        switch (expression)
+        if (
+            Input.GetKeyDown(
+                KeyCode.Return
+            )
+        )
         {
-            case PlayerExpression.Happy:
-                return femaleHappy;
-
-            case PlayerExpression.Angry:
-                return femaleAngry;
-
-            case PlayerExpression.Shocked:
-                return femaleShocked;
-
-            case PlayerExpression.Confused:
-                return femaleConfused;
-
-            default:
-                return femaleNeutral;
+            NextLine();
         }
+    }
+
+    public void OnDialogueClicked()
+    {
+        NextLine();
     }
 
     void ShowLine()
@@ -223,12 +161,20 @@ public class DialogueManager : MonoBehaviour
             speakerText,
             dialogueText,
             leftPortrait,
-            rightPortrait
+            rightPortrait,
+            centerPortrait
         );
+
+        dialogueTyper.StartTyping(DialoguePresenter.BuildDialogueText(dialogueData.lines[currentIndex]));
     }
 
     public void NextLine()
     {
+        if (dialogueTyper.TryCompleteTyping())
+        {
+            return;
+        }
+
         currentIndex++;
 
         if (currentIndex >= dialogueData.lines.Count)

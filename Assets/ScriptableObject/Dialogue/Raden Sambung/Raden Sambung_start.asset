@@ -21,12 +21,14 @@ MonoBehaviour:
     dialogueText: 'Good day, shopkeeper.
 
       Is this where one acquires a PC?'
+    portraitAnimation: 0
   - portrait: {fileID: 0}
-    portraitSide: 1
+    portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 0
     speakerName: '{PLAYER}'
     dialogueText: Yep. You looking to build one?
+    portraitAnimation: 0
   - portrait: {fileID: 21300000, guid: 36c0a0d9341166e488d5f7862c5ce6a5, type: 3}
     portraitSide: 0
     usePlayerPortrait: 0
@@ -36,24 +38,28 @@ MonoBehaviour:
 
       My curiosity toward these modern machines grows
       stronger each day.'
+    portraitAnimation: 0
   - portrait: {fileID: 0}
-    portraitSide: 1
+    portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 4
     speakerName: '{PLAYER}'
     dialogueText: What you gonna use it for?
+    portraitAnimation: 0
   - portrait: {fileID: 21300000, guid: 36c0a0d9341166e488d5f7862c5ce6a5, type: 3}
     portraitSide: 0
     usePlayerPortrait: 0
     playerExpression: 0
     speakerName: Raden Sambung
     dialogueText: "Music, knowledge, art\u2026 perhaps a few modern games as well."
+    portraitAnimation: 0
   - portrait: {fileID: 0}
-    portraitSide: 1
+    portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 1
     speakerName: '{PLAYER}'
     dialogueText: Nice. Got a budget?
+    portraitAnimation: 0
   - portrait: {fileID: 21300000, guid: 36c0a0d9341166e488d5f7862c5ce6a5, type: 3}
     portraitSide: 0
     usePlayerPortrait: 0
@@ -63,10 +69,12 @@ MonoBehaviour:
 
       Quality and elegance matter
       far more.'
+    portraitAnimation: 0
   - portrait: {fileID: 0}
-    portraitSide: 1
+    portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 1
     speakerName: '{PLAYER}'
     dialogueText: "Got it. I\u2019ll build something clean and powerful."
+    portraitAnimation: 0
   nextForcedCustomer: {fileID: 0}

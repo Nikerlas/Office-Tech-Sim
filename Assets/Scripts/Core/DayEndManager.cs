@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DayEndManager : MonoBehaviour
 {
     public PortraitSlot leftPortrait;
+    public PortraitSlot centerPortrait;
     public PortraitSlot rightPortrait;
     public GameObject dialoguePanel;
     public GameObject summaryPanel;
@@ -14,6 +15,7 @@ public class DayEndManager : MonoBehaviour
     public TMP_Text targetMoneyText;
     public TMP_Text speakerText;
     public TMP_Text dialogueText;
+    public DialogueTyper dialogueTyper;
 
     int currentIndex = 0;
 
@@ -40,6 +42,32 @@ public class DayEndManager : MonoBehaviour
         ShowLine();
     }
 
+    void Update()
+    {
+        if (
+            Input.GetKeyDown(
+                KeyCode.Space
+            )
+        )
+        {
+            NextLine();
+        }
+
+        if (
+            Input.GetKeyDown(
+                KeyCode.Return
+            )
+        )
+        {
+            NextLine();
+        }
+    }
+
+    public void OnDialogueClicked()
+    {
+        NextLine();
+    }
+
     void ShowLine()
     {
         DialoguePresenter.ShowLine(
@@ -47,12 +75,20 @@ public class DayEndManager : MonoBehaviour
             speakerText,
             dialogueText,
             leftPortrait,
-            rightPortrait
+            rightPortrait,
+            centerPortrait
         );
+
+        dialogueTyper.StartTyping(DialoguePresenter.BuildDialogueText(dialogueData.lines[currentIndex]));
     }
 
     public void NextLine()
     {
+        if (dialogueTyper.TryCompleteTyping())
+        {
+            return;
+        }
+
         currentIndex++;
 
         if (currentIndex >= dialogueData.lines.Count)

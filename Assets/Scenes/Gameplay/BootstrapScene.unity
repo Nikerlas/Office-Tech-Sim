@@ -735,6 +735,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: 
+  playerGender: 0
+  hasCreatedCharacter: 0
+  playerMale: {fileID: 11400000, guid: 2eea505e68c7d694ebf3562fc06ffbdc, type: 2}
+  playerFemale: {fileID: 11400000, guid: 5bb629045034797409b3e4b5cf96fb42, type: 2}
   todayCustomers: []
   forcedCustomerToday: {fileID: 0}
   currentChapterIndex: 0
