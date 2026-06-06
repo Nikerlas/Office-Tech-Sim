@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dafe6fd2a080d2479c550f872806afe, type: 3}
+  m_Name: LilBah_start
+  m_EditorClassIdentifier: 
+  lines:
+  - portrait: {fileID: 21300000, guid: 8023b0cf096fffe4d9c5b31b66a94541, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Lil B.A.H
+    dialogueText: Yo, wassup bro? This the PC spot, right?
+    portraitAnimation: 0
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 4
+    speakerName: '{PLAYER}'
+    dialogueText: "Yeah man, welcome. What you lookin\u2019 for?"
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: f396bf5ae76cf204a8350063c9a516b9, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Lil B.A.H
+    dialogueText: "Aight, so\u2026 I\u2019m tryna build a fire PC."
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: 8023b0cf096fffe4d9c5b31b66a94541, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Lil B.A.H
+    dialogueText: "Somethin\u2019 crazy fast.\nI be makin\u2019 music, streamin\u2019,
+      maybe some games too."
+    portraitAnimation: 0
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 4
+    speakerName: '{PLAYER}'
+    dialogueText: whats ur budget?
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: 8023b0cf096fffe4d9c5b31b66a94541, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Lil B.A.H
+    dialogueText: "I just want it lookin\u2019 expensive and fast as hell."
+    portraitAnimation: 0
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 0
+    speakerName: '{PLAYER}'
+    dialogueText: You know anything about PCs?
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: 50d8f5b2ffd54cb4e8a37f1b10ac6739, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Lil B.A.H
+    dialogueText: Nothin , Just make it LIT
+    portraitAnimation: 0
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 1
+    speakerName: '{PLAYER}'
+    dialogueText: "Got you. I\u2019ll build you somethin\u2019 clean and powerful."
+    portraitAnimation: 0
+  nextForcedCustomer: {fileID: 0}
