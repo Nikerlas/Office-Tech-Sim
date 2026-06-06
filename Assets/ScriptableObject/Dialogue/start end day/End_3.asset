@@ -16,13 +16,15 @@ MonoBehaviour:
   - portrait: {fileID: 0}
     portraitSide: 1
     usePlayerPortrait: 1
-    playerExpression: 3
+    playerExpression: 1
     speakerName: '{PLAYER}'
     dialogueText: A few do. That's enough for today.
+    portraitAnimation: 0
   - portrait: {fileID: 0}
     portraitSide: 1
     usePlayerPortrait: 1
     playerExpression: 1
     speakerName: '{PLAYER}'
     dialogueText: And we'll do even better tomorrow.
+    portraitAnimation: 0
   nextForcedCustomer: {fileID: 0}

@@ -16,13 +16,15 @@ MonoBehaviour:
   - portrait: {fileID: 0}
     portraitSide: 0
     usePlayerPortrait: 1
-    playerExpression: 2
+    playerExpression: 1
     speakerName: '{PLAYER}'
     dialogueText: The shop's finally quiet.
+    portraitAnimation: 0
   - portrait: {fileID: 0}
     portraitSide: 1
     usePlayerPortrait: 1
     playerExpression: 4
     speakerName: '{PLAYER}'
     dialogueText: Tomorrow starts all over again.
+    portraitAnimation: 0
   nextForcedCustomer: {fileID: 0}

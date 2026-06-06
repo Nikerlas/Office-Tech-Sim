@@ -13,14 +13,40 @@ MonoBehaviour:
   m_Name: LilBah_end
   m_EditorClassIdentifier: 
   lines:
-  - speakerName: Shopkepper
+  - portrait: {fileID: 0}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Shopkepper
     dialogueText: 'Yo bro, your PC done. '
-  - speakerName: Lil B.A.H
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: 7bbd044a39de1e641a09fedae293a11a, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Lil B.A.H
     dialogueText: "DAMN\u2026 this joint look crazy."
-  - speakerName: Shopkepper
+    portraitAnimation: 0
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 1
+    speakerName: '{PLAYER}'
     dialogueText: Told you. Fast setup, clean build, everything ready.
-  - speakerName: Lil B.A.H
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: 8023b0cf096fffe4d9c5b31b66a94541, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Lil B.A.H
     dialogueText: "Aight man, appreciate you big time.\nThanks for buildin\u2019
       this for me, fr."
-  - speakerName: Shopkepper
+    portraitAnimation: 0
+  - portrait: {fileID: 0}
+    portraitSide: 0
+    usePlayerPortrait: 1
+    playerExpression: 1
+    speakerName: '{PLAYER}'
     dialogueText: No problem, bro. Enjoy the new setup.
+    portraitAnimation: 0
+  nextForcedCustomer: {fileID: 0}

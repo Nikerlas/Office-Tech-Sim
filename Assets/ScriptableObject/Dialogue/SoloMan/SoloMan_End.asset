@@ -13,7 +13,67 @@ MonoBehaviour:
   m_Name: SoloMan_End
   m_EditorClassIdentifier: 
   lines:
-  - speakerName: SoloMan
-    dialogueText: 'Ey.. Nice PC
-
-'
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 1
+    speakerName: '{PLAYER}'
+    dialogueText: Your PC is ready.
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: 617e24cb3e3a1ce46b374c4f0c51c952, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: SoloMan
+    dialogueText: Excellent. Let's see what you've got.
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: 0286cdf68ccd4a94b805dd09e8874770, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: SoloMan
+    dialogueText: Wow. It starts faster than my motivation on Monday.
+    portraitAnimation: 0
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 0
+    speakerName: '{PLAYER}'
+    dialogueText: Glad to hear that.
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: 052569ff83f5edb4e9cf658f7040eaf3, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: SoloMan
+    dialogueText: Now I can waste time in much higher quality.
+    portraitAnimation: 0
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 4
+    speakerName: '{PLAYER}'
+    dialogueText: That's one way to use it.
+    portraitAnimation: 0
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 1
+    speakerName: '{PLAYER}'
+    dialogueText: For upgrades?
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: 617e24cb3e3a1ce46b374c4f0c51c952, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: SolloMan
+    dialogueText: No. For more jokes.
+    portraitAnimation: 0
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 2
+    speakerName: '{PLAYER}'
+    dialogueText: Thanks For comming byebye
+    portraitAnimation: 0
+  nextForcedCustomer: {fileID: 0}

@@ -19,16 +19,19 @@ MonoBehaviour:
     playerExpression: 4
     speakerName: '{PLAYER}'
     dialogueText: Another day in Kuraton.
+    portraitAnimation: 0
   - portrait: {fileID: 0}
     portraitSide: 1
     usePlayerPortrait: 1
-    playerExpression: 3
+    playerExpression: 0
     speakerName: '{PLAYER}'
     dialogueText: Another chance to grow.
+    portraitAnimation: 0
   - portrait: {fileID: 0}
     portraitSide: 1
     usePlayerPortrait: 1
     playerExpression: 1
     speakerName: '{PLAYER}'
     dialogueText: i hope this day better than tommorow
+    portraitAnimation: 0
   nextForcedCustomer: {fileID: 0}

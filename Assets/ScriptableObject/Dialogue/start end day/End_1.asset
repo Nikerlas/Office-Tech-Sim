@@ -16,13 +16,15 @@ MonoBehaviour:
   - portrait: {fileID: 0}
     portraitSide: 1
     usePlayerPortrait: 1
-    playerExpression: 0
+    playerExpression: 4
     speakerName: '{PLAYER}'
     dialogueText: Not a bad day.
+    portraitAnimation: 0
   - portrait: {fileID: 0}
     portraitSide: 1
     usePlayerPortrait: 1
     playerExpression: 1
     speakerName: '{PLAYER}'
     dialogueText: We're making progress.
+    portraitAnimation: 0
   nextForcedCustomer: {fileID: 0}
