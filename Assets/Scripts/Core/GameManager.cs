@@ -168,4 +168,13 @@ public class GameManager : MonoBehaviour
         return todayCustomers[currentCustomerIndex];
     }
     #endregion
+
+    public void AddMoney(int amount)
+    {
+        currentMoney += amount;
+        Debug.Log("Uang berhasil ditambahkan di GameManager: " + currentMoney);
+        
+        // Cek chapter unlock jika diperlukan
+        // ChapterManager.Instance.CheckChapterUnlock(); 
+    }
 }
