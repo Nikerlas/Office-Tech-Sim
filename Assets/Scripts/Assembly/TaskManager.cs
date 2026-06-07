@@ -74,14 +74,12 @@ public class TaskManager : MonoBehaviour
 
     void TaskComplete()
     {
-        EconomyManager.Instance.AddMoney(
-            currentTask.rewardMoney
-        );
+        // SEBELUMNYA: EconomyManager.Instance.AddMoney(...)
+        // UBAH MENJADI:
+        GameManager.Instance.AddMoney(currentTask.rewardMoney);
 
         BuildManager.Instance.ClearAllParts();
-
         installedParts.Clear();
-
         GameManager.Instance.returningFromAssembly = true;
 
         SceneTransitionManager.Instance.FadeToScene("DialogueScene");

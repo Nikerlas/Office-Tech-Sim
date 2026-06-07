@@ -43,6 +43,19 @@ public class BuildManager : MonoBehaviour
 
     void Update()
     {
+        // --- FUNGSI UNDO/CANCEL MENGGUNAKAN ESC ---
+        // Jika pemain sedang memegang part (currentPreview tidak kosong) dan menekan tombol ESC
+        if (currentPreview != null && Input.GetKeyDown(KeyCode.Escape))
+        {
+            Destroy(currentPreview);     // Hancurkan part preview yang sedang melayang di kursor
+            currentPreview = null;       // Reset variable agar statusnya kembali kosong
+            InventoryUI.SetActive(true); // Munculkan kembali UI Inventory agar bisa pilih part lain
+            
+            Debug.Log("Pemilihan part dibatalkan via ESC (Undo)");
+            return;                      // Stop baris kode di bawahnya agar tidak menjalankan raycast di frame ini
+        }
+        // ------------------------------------------
+
         CheckRemovePart();
         if (currentPreview == null)
             return;
@@ -72,7 +85,6 @@ public class BuildManager : MonoBehaviour
         }
 
         Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red);
-
     }
 
     void PlacePart(PartSlot slot)
