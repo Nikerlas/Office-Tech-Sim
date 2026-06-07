@@ -1,121 +1,180 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildManager : MonoBehaviour
 {
     public static BuildManager Instance;
-    public enum BuildMode { Pasang, Lepas }
-    public BuildMode currentMode = BuildMode.Pasang;
-
     public LayerMask placementLayer;
+
     public GameObject currentPreview;
     public PartType currentPartType;
+
     public GameObject InventoryUI;
-    
-    [Header("Remove Settings")]
-    public float holdDuration = 2f;
     float holdTimer = 0f;
 
-    void Awake() { Instance = this; }
+    public float holdDuration = 1f;
 
-    // GANTI bagian SetMode(int modeIndex) dengan dua fungsi ini:
+    PartSlot hoveredSlot;
+    public List<PartSlot> allSlots = new List<PartSlot>();
 
-    public void SetModePasang() 
+    void Awake()
     {
-        currentMode = BuildMode.Pasang;
-        Debug.Log("Mode Pasang Aktif");
-    }
-
-    public void SetModeLepas() 
-    {
-        currentMode = BuildMode.Lepas;
-        Debug.Log("Mode Lepas Aktif");
+        Instance = this;
     }
 
     public void SelectPart(GameObject prefab, PartType type)
     {
-        if (currentMode != BuildMode.Pasang) return; // Hanya bisa pasang di mode Pasang
-        
         currentPartType = type;
+
         InventoryUI.SetActive(false);
-        if (currentPreview != null) Destroy(currentPreview);
+
+        if (currentPreview != null)
+            Destroy(currentPreview);
+
         currentPreview = Instantiate(prefab);
-        currentPreview.GetComponent<Collider>().enabled = false;
+
+        Collider col = currentPreview.GetComponent<Collider>();
+
+        if (col != null)
+            col.enabled = false;
+    }
+
+    public void ToggleInventory()
+    {
+        // Cek apakah inventory sedang aktif atau tidak, lalu balik kondisinya
+        bool isActive = InventoryUI.activeSelf;
+        InventoryUI.SetActive(!isActive);
     }
 
     void Update()
     {
-        if (currentMode == BuildMode.Pasang)
+        // --- FUNGSI UNDO/CANCEL MENGGUNAKAN ESC ---
+        // Jika pemain sedang memegang part (currentPreview tidak kosong) dan menekan tombol ESC
+        if (currentPreview != null && Input.GetKeyDown(KeyCode.Escape))
         {
-            HandlePlacement();
+            Destroy(currentPreview);     // Hancurkan part preview yang sedang melayang di kursor
+            currentPreview = null;       // Reset variable agar statusnya kembali kosong
+            InventoryUI.SetActive(true); // Munculkan kembali UI Inventory agar bisa pilih part lain
+            
+            Debug.Log("Pemilihan part dibatalkan via ESC (Undo)");
+            return;                      // Stop baris kode di bawahnya agar tidak menjalankan raycast di frame ini
         }
-        else if (currentMode == BuildMode.Lepas)
-        {
-            CheckRemovePart();
-        }
-    }
+        // ------------------------------------------
 
-    void HandlePlacement()
-    {
-        if (currentPreview == null) return;
+        CheckRemovePart();
+        if (currentPreview == null)
+            return;
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
         if (Physics.Raycast(ray, out RaycastHit hit, 100f, placementLayer))
         {
             currentPreview.transform.position = hit.point;
-            PartSlot slot = hit.collider.GetComponent<PartSlot>();
-            if (slot != null && slot.allowedType == currentPartType && !slot.occupied)
-            {
-                currentPreview.transform.position = slot.transform.position;
-                if (Input.GetMouseButtonDown(0)) PlacePart(slot);
-            }
-        }
-    }
 
-    void CheckRemovePart()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit))
-        {
             PartSlot slot = hit.collider.GetComponent<PartSlot>();
-            if (slot != null && slot.occupied)
+
+            if (slot != null)
             {
-                if (Input.GetMouseButton(0))
+                Debug.Log("Slot Detected");
+                if (slot.allowedType == currentPartType && !slot.occupied)
                 {
-                    holdTimer += Time.deltaTime;
-                    if (holdTimer >= holdDuration)
+                    currentPreview.transform.position = slot.transform.position;
+                    currentPreview.transform.rotation = slot.transform.rotation;
+
+                    if (Input.GetMouseButtonDown(0))
                     {
-                        RemovePartToInventory(slot);
-                        holdTimer = 0f;
+                        PlacePart(slot);
                     }
                 }
-                else { holdTimer = 0f; }
             }
-            else { holdTimer = 0f; }
         }
-    }
 
-    void RemovePartToInventory(PartSlot slot)
-    {
-        // Masukkan ke InventoryManager
-        InventoryManager.Instance.AddToInventory(slot.placedPart);
-        
-        // Update TaskManager
-        TaskManager.Instance.RemoveInstalledPart(slot.placedPart.GetComponent<PCPart>().partType);
-        
-        // Bersihkan slot
-        slot.placedPart = null;
-        slot.occupied = false;
-        Debug.Log("Part berhasil dicopot!");
+        Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red);
     }
 
     void PlacePart(PartSlot slot)
     {
         slot.occupied = true;
-        slot.placedPart = currentPreview;
-        slot.placedPart.transform.position = slot.snapPoint.position;
-        slot.placedPart.transform.rotation = slot.snapPoint.rotation;
+
         TaskManager.Instance.RegisterInstalledPart(currentPartType);
+
+        slot.placedPart = currentPreview;
+
+        GameObject placedPart = currentPreview;
+
+        placedPart.transform.position = slot.snapPoint.position;
+        placedPart.transform.rotation = slot.snapPoint.rotation;
+
         currentPreview = null;
+
         InventoryUI.SetActive(true);
+    }
+
+    void CheckRemovePart()
+    {
+        if(currentPreview != null)
+            return;
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if(Physics.Raycast(ray, out RaycastHit hit))
+        {
+            PartSlot slot = hit.collider.GetComponent<PartSlot>();
+
+            if(slot != null && slot.occupied)
+            {
+                hoveredSlot = slot;
+
+                if(Input.GetMouseButton(0))
+                {
+                    holdTimer += Time.deltaTime;
+
+                    if(holdTimer >= holdDuration)
+                    {
+                        RemovePart(slot);
+
+                        holdTimer = 0f;
+                    }
+                }
+
+                if(Input.GetMouseButtonUp(0))
+                {
+                    holdTimer = 0f;
+                }
+            }
+            else
+            {
+                holdTimer = 0f;
+            }
+        }
+    }
+
+    void RemovePart(PartSlot slot)
+    {
+        PartType removedType = slot.allowedType;
+
+        TaskManager.Instance.RemoveInstalledPart(removedType);
+        
+        Destroy(slot.placedPart);
+
+        slot.placedPart = null;
+
+        slot.occupied = false;
+    }
+
+    public void ClearAllParts()
+    {
+        foreach(PartSlot slot in allSlots)
+        {
+            if(slot.occupied)
+            {
+                Destroy(slot.placedPart);
+
+                slot.placedPart = null;
+
+                slot.occupied = false;
+            }
+        }
     }
 }

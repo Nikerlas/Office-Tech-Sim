@@ -78,7 +78,7 @@ public class TaskManager : MonoBehaviour
         // UBAH MENJADI:
         GameManager.Instance.AddMoney(currentTask.rewardMoney);
 
-        BuildManager.Instance.ClearAllParts();
+        //BuildManager.Instance.ClearAllParts();
         installedParts.Clear();
         GameManager.Instance.returningFromAssembly = true;
 
