@@ -125,36 +125,32 @@ public class GameManager : MonoBehaviour
     {
         todayCustomers.Clear();
 
-        List<CustomerJob> pool =
-            currentChapter.customerPool;
+        List<CustomerJob> availableCustomers = new List<CustomerJob>(currentChapter.customerPool);
 
-        for (int i = 0; i < 3; i++)
+        int customerCount =
+            Mathf.Min(
+                3,
+                availableCustomers.Count
+            );
+
+        for (int i = 0; i < customerCount; i++)
         {
             int randomIndex =
-                Random.Range(0, pool.Count);
+                Random.Range(
+                    0,
+                    availableCustomers.Count
+                );
+
+            CustomerJob selected =
+                availableCustomers[randomIndex];
 
             todayCustomers.Add(
-                pool[randomIndex]
+                selected
             );
-        }
 
-        if (forcedCustomerToday != null)
-        {
-            int slot =
-                Random.Range(0, todayCustomers.Count);
-
-            todayCustomers[slot] =
-                forcedCustomerToday;
-
-            forcedCustomerToday = null;
-        }
-
-        Debug.Log("Today's Customers:");
-
-        foreach (CustomerJob customer
-            in todayCustomers)
-        {
-            Debug.Log(customer.name);
+            availableCustomers.RemoveAt(
+                randomIndex
+            );
         }
     }
 
@@ -173,7 +169,7 @@ public class GameManager : MonoBehaviour
     {
         currentMoney += amount;
         Debug.Log("Uang berhasil ditambahkan di GameManager: " + currentMoney);
-        
+
         // Cek chapter unlock jika diperlukan
         // ChapterManager.Instance.CheckChapterUnlock(); 
     }
