@@ -17,4 +17,4 @@ MonoBehaviour:
   happy: {fileID: 21300000, guid: 21343b61959f2054a8d9daaf626bd70b, type: 3}
   angry: {fileID: 21300000, guid: bba8a8e0e01d95347b7cc1876aa2d485, type: 3}
   shocked: {fileID: 21300000, guid: c06f3cef5107a7e4a8ff02e575a4244c, type: 3}
-  confused: {fileID: 21300000, guid: fea2154601f62df4f83a564c56a3e360, type: 3}
+  confused: {fileID: 21300000, guid: f942c4ae104c6fa41a05a77092179d5a, type: 3}
