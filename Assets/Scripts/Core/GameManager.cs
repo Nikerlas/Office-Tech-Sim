@@ -13,9 +13,11 @@ public class GameManager : MonoBehaviour
     public CharacterData playerFemale;
 
     [Header("Customer")]
-    public List<CustomerJob> todayCustomers =
-    new List<CustomerJob>();
+    public List<CustomerData> todayCustomers = new List<CustomerData>();
     public CustomerJob forcedCustomerToday;
+
+    [Header("Customer Progress")]
+    public List<CustomerProgress> customerProgress = new List<CustomerProgress>();
 
     [Header("Progression")]
     public int currentChapterIndex;
@@ -74,11 +76,25 @@ public class GameManager : MonoBehaviour
     {
         dayFinished = false;
 
-        if (currentMoney >= currentChapter.targetMoney)
+        Debug.Log(
+            "Money: "
+            + currentMoney
+            + "/"
+            + currentChapter.targetMoney
+        );
+
+        Debug.Log(
+            "Story Complete: "
+            + IsAllStoryCompleted()
+        );
+
+        if (currentMoney >= currentChapter.targetMoney && IsAllStoryCompleted())
         {
             chapterComplete = true;
 
-            Debug.Log("CHAPTER COMPLETE");
+            Debug.Log(
+                "CHAPTER COMPLETE"
+            );
         }
         else
         {
@@ -109,6 +125,37 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Customer
+
+    public CustomerProgress GetCustomerProgress(CustomerData customer)
+    {
+        foreach (
+            CustomerProgress progress
+            in customerProgress
+        )
+        {
+            if (progress.customer == customer)
+            {
+                return progress;
+            }
+        }
+
+        CustomerProgress newProgress =
+            new CustomerProgress();
+
+        newProgress.customer =
+            customer;
+
+        newProgress.currentStage = 0;
+
+        newProgress.isCompleted = false;
+
+        customerProgress.Add(
+            newProgress
+        );
+
+        return newProgress;
+    }
+
     public void NextCustomer()
     {
         currentCustomerIndex++;
@@ -125,7 +172,37 @@ public class GameManager : MonoBehaviour
     {
         todayCustomers.Clear();
 
-        List<CustomerJob> availableCustomers = new List<CustomerJob>(currentChapter.customerPool);
+        List<CustomerData> availableCustomers = new List<CustomerData>();
+
+        foreach (
+            CustomerData customer
+            in currentChapter.customerPool
+        )
+        {
+            if (customer.isStoryCustomer)
+            {
+                CustomerProgress progress =
+                    GetCustomerProgress(customer);
+
+                if (!progress.isCompleted)
+                {
+                    availableCustomers.Add(customer);
+                }
+            }
+            else
+            {
+                availableCustomers.Add(customer);
+            }
+        }
+
+        if (availableCustomers.Count == 0)
+        {
+            Debug.Log(
+                "All Story Customers Completed"
+            );
+
+            return;
+        }
 
         int customerCount =
             Mathf.Min(
@@ -141,7 +218,7 @@ public class GameManager : MonoBehaviour
                     availableCustomers.Count
                 );
 
-            CustomerJob selected =
+            CustomerData selected =
                 availableCustomers[randomIndex];
 
             todayCustomers.Add(
@@ -159,9 +236,33 @@ public class GameManager : MonoBehaviour
         forcedCustomerToday = customer;
     }
 
-    public CustomerJob GetCurrentTodayCustomer()
+    public CustomerData GetCurrentTodayCustomer()
     {
         return todayCustomers[currentCustomerIndex];
+    }
+
+    public bool IsAllStoryCompleted()
+    {
+        foreach (
+            CustomerData customer
+            in currentChapter.customerPool
+        )
+        {
+            if (!customer.isStoryCustomer)
+            {
+                continue;
+            }
+
+            CustomerProgress progress =
+                GetCustomerProgress(customer);
+
+            if (!progress.isCompleted)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
     #endregion
 

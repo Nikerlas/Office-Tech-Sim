@@ -6,6 +6,19 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     PlayerGender selectedGender;
+    // public Image portraitImage;
+    public TMP_Text speakerText;
+    public TMP_Text dialogueText;
+
+    public DialogueData dialogueData;
+
+    public DialogueTyper dialogueTyper;
+
+    int currentIndex = 0;
+    int completed = 0;
+    int total = 0;
+
+    bool isResultDialogue;
 
     [Header("Character Setup")]
     public GameObject characterSetupPanel;
@@ -23,17 +36,15 @@ public class DialogueManager : MonoBehaviour
 
     public PortraitSlot rightPortrait;
 
-    // public Image portraitImage;
-    public TMP_Text speakerText;
-    public TMP_Text dialogueText;
+    [Header("Summary Panel")]
+    public GameObject summaryPanel;
 
-    public DialogueData dialogueData;
+    public TMP_Text summaryCustomerText;
+    public TMP_Text summaryTaskText;
+    public TMP_Text summaryRewardText;
+    public TMP_Text summaryMoneyText;
+    public TMP_Text summaryStoryProgressText;
 
-    public DialogueTyper dialogueTyper;
-
-    int currentIndex = 0;
-
-    bool isResultDialogue;
 
     void Start()
     {
@@ -98,8 +109,17 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        CustomerJob currentJob =
-            GameManager.Instance.GetCurrentTodayCustomer();
+        CustomerData customer = GameManager.Instance.GetCurrentTodayCustomer();
+
+        CustomerProgress progress = GameManager.Instance.GetCustomerProgress(customer);
+
+        CustomerJob currentJob = customer.stages[progress.currentStage];
+
+        Debug.Log(
+            customer.customerName
+            + " Stage "
+            + progress.currentStage
+        );
 
         if (GameManager.Instance.returningFromAssembly)
         {
@@ -207,8 +227,14 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        CustomerJob currentJob =
+        CustomerData customer =
             GameManager.Instance.GetCurrentTodayCustomer();
+
+        CustomerProgress progress =
+            GameManager.Instance.GetCustomerProgress(customer);
+
+        CustomerJob currentJob = customer.stages[progress.currentStage];
+
 
         if (!isResultDialogue)
         {
@@ -220,16 +246,43 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        GameManager.Instance.NextCustomer();
 
-        if (GameManager.Instance.dayFinished)
+        if (!isResultDialogue)
         {
-            SceneTransitionManager.Instance.FadeToScene("DayEndScene");
+            GameManager.Instance.currentTask =
+                currentJob.buildTask;
+
+            SceneTransitionManager.Instance.FadeToScene("AssemblyScene");
+
+            return;
+        }
+
+        if (progress.currentStage < customer.stages.Count - 1)
+        {
+            progress.currentStage++;
+
+            Debug.Log(
+                customer.customerName +
+                " Advanced To Stage " +
+                progress.currentStage
+            );
         }
         else
         {
-            SceneTransitionManager.Instance.FadeToScene("DialogueScene");
+            progress.isCompleted = true;
+
+            Debug.Log(
+                customer.customerName +
+                " STORY COMPLETE"
+            );
         }
+
+        ShowSummaryPanel(
+            customer,
+            currentJob
+        );
+
+        dialoguePanel.SetActive(false);
 
         Debug.Log("Customer Finished");
     }
@@ -285,5 +338,63 @@ public class DialogueManager : MonoBehaviour
         currentIndex = 0;
 
         ShowLine();
+    }
+
+    void ShowSummaryPanel(CustomerData customer, CustomerJob currentJob)
+    {
+        summaryPanel.SetActive(true);
+
+        summaryCustomerText.text =
+            customer.customerName;
+
+        summaryTaskText.text =
+            currentJob.buildTask.taskName;
+
+        summaryRewardText.text =
+            "+" +
+            currentJob.buildTask.rewardMoney;
+
+        summaryMoneyText.text =
+            "$" +
+            GameManager.Instance.currentMoney;
+
+        foreach (CustomerData c in GameManager.Instance.currentChapter.customerPool)
+        {
+            if (!c.isStoryCustomer)
+            {
+                continue;
+            }
+
+            total++;
+
+            CustomerProgress progress =
+                GameManager.Instance.GetCustomerProgress(c);
+
+            if (progress.isCompleted)
+            {
+                completed++;
+            }
+        }
+
+        summaryStoryProgressText.text =
+            completed + " / " + total;
+    }
+
+    public void ContinueAfterSummary()
+    {
+        summaryPanel.SetActive(false);
+
+        GameManager.Instance.NextCustomer();
+
+        if (GameManager.Instance.dayFinished)
+        {
+            SceneTransitionManager.Instance
+                .FadeToScene("DayEndScene");
+        }
+        else
+        {
+            SceneTransitionManager.Instance
+                .FadeToScene("DialogueScene");
+        }
     }
 }

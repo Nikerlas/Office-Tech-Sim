@@ -4,8 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    public TMP_InputField nameInput;
-
     void Start()
     {
         AudioManager.Instance.PlayMainMenuBGM();
