@@ -97,7 +97,7 @@ public class TaskManager : MonoBehaviour
                 installedParts.Contains(requiredPart);
 
             string check =
-                installed ? "☑ " : "☐ ";
+                installed ? "[X] " : "[  ] ";
 
             display +=
                 check + requiredPart + "\n";

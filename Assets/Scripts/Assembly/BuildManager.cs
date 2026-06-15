@@ -97,7 +97,7 @@ public class BuildManager : MonoBehaviour
     {
         slot.occupied = true;
 
-        TaskManager.Instance.RegisterInstalledPart(currentPartType);
+        TaskManager.Instance.RegisterInstalledPart(slot.allowedType);
 
         slot.placedPart = currentPreview;
 
@@ -108,7 +108,7 @@ public class BuildManager : MonoBehaviour
 
         currentPreview = null;
 
-        InventoryUI.SetActive(true);
+        InventoryUI.SetActive(false);
     }
 
     void CheckRemovePart()
