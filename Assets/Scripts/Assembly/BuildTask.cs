@@ -9,4 +9,10 @@ public class BuildTask : ScriptableObject
     public List<PartType> requiredParts;
 
     public int rewardMoney;
+
+    public string targetCPU;
+
+    public int targetRAM;
+
+    public string targetGPU;
 }

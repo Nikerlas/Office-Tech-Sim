@@ -142,6 +142,9 @@ public class GameManager : MonoBehaviour
         CustomerProgress newProgress =
             new CustomerProgress();
 
+        newProgress.currentPC =
+            customer.startingPC.Clone();
+
         newProgress.customer =
             customer;
 

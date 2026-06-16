@@ -121,6 +121,13 @@ public class DialogueManager : MonoBehaviour
             + progress.currentStage
         );
 
+        Debug.Log(
+                customer.customerName +
+                "\nCPU: " + progress.currentPC.cpu +
+                "\nRAM: " + progress.currentPC.ramSize +
+                "\nGPU: " + progress.currentPC.gpu
+            );
+
         if (GameManager.Instance.returningFromAssembly)
         {
             dialogueData =
@@ -369,6 +376,7 @@ public class DialogueManager : MonoBehaviour
 
             CustomerProgress progress =
                 GameManager.Instance.GetCustomerProgress(c);
+
 
             if (progress.isCompleted)
             {

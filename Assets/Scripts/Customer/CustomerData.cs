@@ -6,6 +6,7 @@ public class CustomerData
     : ScriptableObject
 {
     public string customerName;
+    public CustomerPC startingPC;
 
     public bool isStoryCustomer = true;
 

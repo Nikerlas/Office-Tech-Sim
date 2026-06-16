@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 217c16117026ce14abae2e3dc6d15793, type: 3}
-  m_Name: Task1
+  m_Script: {fileID: 11500000, guid: e974d4641a952f342b07533c5c26e91f, type: 3}
+  m_Name: RAM 4GB
   m_EditorClassIdentifier: 
-  taskName: Build a PC
-  requiredParts: 0100000002000000
-  rewardMoney: 100
-  targetCPU: 
-  targetRAM: 4
-  targetGPU: RTX
+  partName: RAM 4GB
+  partType: 1
+  cpuName: 
+  ramSize: 4
+  gpuName: 
+  prefab: {fileID: 3211796321393779624, guid: 05e93b9fc61a9e94abe6a28a6616e0e5, type: 3}

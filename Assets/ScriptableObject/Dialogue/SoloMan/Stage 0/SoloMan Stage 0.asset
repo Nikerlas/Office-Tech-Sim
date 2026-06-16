@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerName: SoloMan
   introDialogue: {fileID: 11400000, guid: 9f75f9882cfb2804fae96690510eb746, type: 2}
-  buildTask: {fileID: 11400000, guid: 1bc6098757f831944b810fd6e940d83a, type: 2}
+  buildTask: {fileID: 11400000, guid: b10e36509403e0d43b364d32730b65bd, type: 2}
   resultDialogue: {fileID: 11400000, guid: d4a2861362e1579429660f908a35c5c1, type: 2}

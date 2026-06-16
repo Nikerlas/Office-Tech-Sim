@@ -15,3 +15,6 @@ MonoBehaviour:
   taskName: Build a PC SoloMan
   requiredParts: 000000000100000002000000
   rewardMoney: 100
+  targetCPU: INTEL
+  targetRAM: 32
+  targetGPU: INTEL

@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Soloman
   m_EditorClassIdentifier: 
   customerName: SoloMan
+  startingPC:
+    cpu: INLET CORE
+    ramSize: 2
+    gpu: 
+  isStoryCustomer: 1
   stages:
   - {fileID: 11400000, guid: c8067f0011fb26a42b24846fe588814e, type: 2}
   - {fileID: 11400000, guid: af2514d87c73aae4a8ab06ba286fd895, type: 2}

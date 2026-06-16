@@ -58,6 +58,17 @@ public class TaskManager : MonoBehaviour
 
     public void CheckCurrentTask()
     {
+        PartData ramData = BuildManager.Instance.GetInstalledPartData(
+            PartType.RAM
+        );
+
+        if (ramData != null)
+        {
+            Debug.Log(
+                "Installed RAM = "
+                + ramData.ramSize
+            );
+        }
         foreach (PartType requiredPart
             in currentTask.requiredParts)
         {
@@ -77,6 +88,38 @@ public class TaskManager : MonoBehaviour
         // SEBELUMNYA: EconomyManager.Instance.AddMoney(...)
         // UBAH MENJADI:
         GameManager.Instance.AddMoney(currentTask.rewardMoney);
+
+        CustomerData customer = GameManager.Instance.GetCurrentTodayCustomer();
+
+        CustomerProgress progress = GameManager.Instance.GetCustomerProgress(customer);
+
+        if (!string.IsNullOrEmpty(
+    currentTask.targetCPU))
+        {
+            progress.currentPC.cpu =
+                currentTask.targetCPU;
+        }
+
+        if (currentTask.targetRAM > 0)
+        {
+            progress.currentPC.ramSize =
+                currentTask.targetRAM;
+        }
+
+        if (!string.IsNullOrEmpty(
+            currentTask.targetGPU))
+        {
+            progress.currentPC.gpu =
+                currentTask.targetGPU;
+        }
+
+        Debug.Log(
+            customer.customerName +
+            " PC Updated\n" +
+            "CPU: " + progress.currentPC.cpu +
+            "\nRAM: " + progress.currentPC.ramSize +
+            "\nGPU: " + progress.currentPC.gpu
+        );
 
         //BuildManager.Instance.ClearAllParts();
         installedParts.Clear();
