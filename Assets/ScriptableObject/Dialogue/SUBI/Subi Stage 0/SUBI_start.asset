@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dafe6fd2a080d2479c550f872806afe, type: 3}
+  m_Name: SUBI_start
+  m_EditorClassIdentifier: 
+  lines:
+  - portrait: {fileID: 21300000, guid: 995f03dc722039446a9050d077965e54, type: 3}
+    portraitSide: 1
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Subi
+    dialogueText: Babe, this is the place I told you about.
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: 4bad75b2863acc44489ba2422d4e81d7, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Titiek
+    dialogueText: So... what are we buying?
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: 995f03dc722039446a9050d077965e54, type: 3}
+    portraitSide: 1
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Subi
+    dialogueText: A gaming PC. Don't worry, I know everything.
+    portraitAnimation: 0
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 1
+    speakerName: '{PLAYER}'
+    dialogueText: Welcome! Looking to build a PC?
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: d8d85a057b22b764ab143252bfef6c28, type: 3}
+    portraitSide: 1
+    usePlayerPortrait: 0
+    playerExpression: 1
+    speakerName: Subi
+    dialogueText: Exactly. And just so you know... Intel makes graphics cards, AMD
+      makes processors.
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: 623faae25617f07489d07ee762229caa, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 1
+    speakerName: Titiek
+    dialogueText: Wow, you really know your stuff.
+    portraitAnimation: 1
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 3
+    speakerName: '{PLAYER}'
+    dialogueText: Well... both Intel and AMD make processors.
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: d8d85a057b22b764ab143252bfef6c28, type: 3}
+    portraitSide: 1
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Subi
+    dialogueText: Right... that's exactly what I meant.
+    portraitAnimation: 0
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: '{PLAYER}'
+    dialogueText: So what's your budget?
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: 995f03dc722039446a9050d077965e54, type: 3}
+    portraitSide: 1
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Subi
+    dialogueText: Whatever makes me look like a pro gamer.
+    portraitAnimation: 0
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 1
+    speakerName: '{PLAYER}'
+    dialogueText: Got it.
+    portraitAnimation: 0
+  nextForcedCustomer: {fileID: 0}

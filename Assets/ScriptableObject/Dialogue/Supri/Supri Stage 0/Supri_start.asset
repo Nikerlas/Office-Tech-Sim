@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dafe6fd2a080d2479c550f872806afe, type: 3}
+  m_Name: Supri_start
+  m_EditorClassIdentifier: 
+  lines:
+  - portrait: {fileID: 21300000, guid: 147627b9f56b5bd4881f6fa8b80b5615, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Supri
+    dialogueText: I'm looking for competence.
+    portraitAnimation: 0
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 1
+    speakerName: '{PLAYER}'
+    dialogueText: What can I help you with?
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: 3b843148ad89b1e4789883b6905035bd, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 1
+    playerExpression: 1
+    speakerName: Supri
+    dialogueText: A PC ,One that isn't chosen because "it has pretty RGB."
+    portraitAnimation: 0
+  - portrait: {fileID: 0}
+    portraitSide: 0
+    usePlayerPortrait: 1
+    playerExpression: 1
+    speakerName: '{PLAYER}'
+    dialogueText: Fair enough.
+    portraitAnimation: 0
+  nextForcedCustomer: {fileID: 0}

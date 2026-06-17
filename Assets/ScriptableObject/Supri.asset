@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fee4c5cdefa1bed4b8339e912f0a27a0, type: 3}
-  m_Name: LilBah
+  m_Name: Supri
   m_EditorClassIdentifier: 
-  customerName: LilBah
+  customerName: Supri
   startingPC:
     cpu: 
     ramSize: 0
     gpu: 
   isStoryCustomer: 1
   stages:
-  - {fileID: 11400000, guid: f8f45d3b533595f45b31ca9f0681531e, type: 2}
-  - {fileID: 11400000, guid: 7ea4b087e1cc6634192ce78f98b5d25e, type: 2}
+  - {fileID: 11400000, guid: 8945c50e750849b41bf5f7e39365abac, type: 2}

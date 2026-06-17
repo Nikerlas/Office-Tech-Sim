@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e42e5b4dcc9eaf41b493c336d6f0f09, type: 3}
-  m_Name: Chapter 2
+  m_Name: Chapter 3
   m_EditorClassIdentifier: 
   showCharacterSetup: 0
   chapterName: Perjalanan di Kuraton
-  targetMoney: 2000
+  targetMoney: 3000
   customerPool:
-  - {fileID: 11400000, guid: e3415996bfe99554abb65bd909cc98f1, type: 2}
   - {fileID: 11400000, guid: 5d5cf9d1e253c79459711cd447bb2f0c, type: 2}
   - {fileID: 11400000, guid: b494322c1c64bc34fb773d624108442a, type: 2}
-  - {fileID: 11400000, guid: 872804c9c002b8b49a72d9f5889bb85f, type: 2}
-  chapterIntroDialogue: {fileID: 11400000, guid: d6d0afd5a4fbac24db916be1004005cd, type: 2}
+  - {fileID: 11400000, guid: 1b18244fbfd9bcc4084e64dd6617f2de, type: 2}
+  - {fileID: 11400000, guid: 5b49638fbe1078a4cb93ae99a82ebf2a, type: 2}
+  chapterIntroDialogue: {fileID: 11400000, guid: 8fda21b3e667a80479b05fa7864912d5, type: 2}
   chapterCompleteDialogue: {fileID: 11400000, guid: e678bbbe943c8a24d8b74c3c1af6e9eb, type: 2}
   startDayDialogues:
   - {fileID: 11400000, guid: a1b3d23186f4e314390b4ac06bbafd6a, type: 2}

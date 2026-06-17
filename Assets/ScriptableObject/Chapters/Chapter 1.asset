@@ -16,12 +16,10 @@ MonoBehaviour:
   chapterName: Awal kehidupan di Kuraton
   targetMoney: 1000
   customerPool:
-  - {fileID: 11400000, guid: e3415996bfe99554abb65bd909cc98f1, type: 2}
   - {fileID: 11400000, guid: e7730317e75fd5c4583158bbc70ff7e3, type: 2}
   - {fileID: 11400000, guid: 5d5cf9d1e253c79459711cd447bb2f0c, type: 2}
   - {fileID: 11400000, guid: b494322c1c64bc34fb773d624108442a, type: 2}
-  - {fileID: 11400000, guid: 872804c9c002b8b49a72d9f5889bb85f, type: 2}
-  - {fileID: 11400000, guid: ec7bdb5e2d522f94f8d479dab438b087, type: 2}
+  - {fileID: 11400000, guid: b2e1d4b840897834b92b480f2cf0f801, type: 2}
   chapterIntroDialogue: {fileID: 11400000, guid: 4714faf315d84f444ba647762fee94a3, type: 2}
   chapterCompleteDialogue: {fileID: 11400000, guid: 8fda21b3e667a80479b05fa7864912d5, type: 2}
   startDayDialogues:

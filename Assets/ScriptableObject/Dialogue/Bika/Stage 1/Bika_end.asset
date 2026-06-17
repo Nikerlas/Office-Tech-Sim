@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dafe6fd2a080d2479c550f872806afe, type: 3}
+  m_Name: Bika_end
+  m_EditorClassIdentifier: 
+  lines:
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 1
+    speakerName: '{PLAYER}'
+    dialogueText: Your order's here.
+    portraitAnimation: 1
+  - portrait: {fileID: 21300000, guid: 8a559d91122518c499f71c7eb637da35, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 4
+    speakerName: Bika
+    dialogueText: Yep. Nice cable management too.
+    portraitAnimation: 1
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 3
+    speakerName: '{PLAYER}'
+    dialogueText: Glad you noticed.
+    portraitAnimation: 1
+  - portrait: {fileID: 21300000, guid: c09215ecdb07e7b498ee3a169e41d94b, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Bika
+    dialogueText: Exactly. The day you stop learning... your knowledge starts getting
+      outdated.
+    portraitAnimation: 1
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 1
+    speakerName: Bika
+    dialogueText: Thanks, Bika.
+    portraitAnimation: 1
+  - portrait: {fileID: 21300000, guid: f4f7650593997d84391800055df136fd, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 1
+    speakerName: Bika
+    dialogueText: Anytime. See you at my next upgrade.
+    portraitAnimation: 1
+  nextForcedCustomer: {fileID: 0}

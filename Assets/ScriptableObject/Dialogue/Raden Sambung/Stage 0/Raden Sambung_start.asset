@@ -65,10 +65,10 @@ MonoBehaviour:
     usePlayerPortrait: 0
     playerExpression: 1
     speakerName: Raden Sambung
-    dialogueText: 'Dont talk about any budget.
+    dialogueText: 'Dont talk about any budget. I already have the square boxes
 
-      Quality and elegance matter
-      far more.'
+      Quality
+      and elegance matter far more.'
     portraitAnimation: 0
   - portrait: {fileID: 0}
     portraitSide: 2
