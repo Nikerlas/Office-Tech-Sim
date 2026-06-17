@@ -13,8 +13,24 @@ public class EconomyManager : MonoBehaviour
 
     void Start()
     {
-        // Pastikan UI menampilkan uang terbaru dari GameManager saat scene dimulai
+        // Update UI saat pertama kali scene dimuat agar angkanya sinkron
         UpdateUI();
+    }
+
+    // Pastikan fungsi AddMoney ini ada dan menerima parameter (int amount)
+    public void AddMoney(int amount)
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.currentMoney += amount;
+            UpdateUI();
+            
+            // Jaga-jaga jika ChapterManager ada di scene ini
+            if (ChapterManager.Instance != null)
+            {
+                ChapterManager.Instance.CheckChapterUnlock();
+            }
+        }
     }
 
     public void UpdateUI()
