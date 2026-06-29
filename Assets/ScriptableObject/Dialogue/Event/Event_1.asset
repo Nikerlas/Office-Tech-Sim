@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - portrait: {fileID: 0}
+    portraitSide: 1
+    usePlayerPortrait: 1
+    playerExpression: 0
     speakerName: '{PLAYER}'
     dialogueText: i heared that tommorow we get special customer
+    portraitAnimation: 0
   nextForcedCustomer: {fileID: 0}

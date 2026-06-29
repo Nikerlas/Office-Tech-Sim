@@ -17,11 +17,9 @@ MonoBehaviour:
     portraitSide: 1
     usePlayerPortrait: 0
     playerExpression: 0
-    speakerName: ' '
-    dialogueText: 'Welcome to Kuraton.
-
-      You own a small computer shop with
-      limited money, limited equipment, and zero reputation.
+    speakerName: ' Jeki'
+    dialogueText: 'Welcome to Kuraton. You own a small computer shop with limited
+      money, limited equipment, and zero reputation.
 
 '
     portraitAnimation: 0
@@ -29,7 +27,7 @@ MonoBehaviour:
     portraitSide: 1
     usePlayerPortrait: 0
     playerExpression: 0
-    speakerName: ' '
+    speakerName: Jeki
     dialogueText: Build PCs, serve customers, earn trust, and grow your business.
       Every successful company starts somewhere. This is your beginning.
     portraitAnimation: 0

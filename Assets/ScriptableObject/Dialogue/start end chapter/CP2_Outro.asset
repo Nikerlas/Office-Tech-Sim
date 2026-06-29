@@ -13,14 +13,11 @@ MonoBehaviour:
   m_Name: CP2_Outro
   m_EditorClassIdentifier: 
   lines:
-  - portrait: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: 4d5bd482017f51d468d1d191ebdb29ba, type: 3}
+    portraitSide: 1
+    usePlayerPortrait: 0
+    playerExpression: 0
     speakerName: 
-    dialogueText: 'New customers.
-
-
-      New challenges.
-
-
-      And bigger opportunities
-      await.'
+    dialogueText: New customers.New challenges.And bigger opportunities await.
+    portraitAnimation: 0
   nextForcedCustomer: {fileID: 0}

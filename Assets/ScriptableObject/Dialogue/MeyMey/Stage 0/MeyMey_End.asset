@@ -13,5 +13,11 @@ MonoBehaviour:
   m_Name: MeyMey_End
   m_EditorClassIdentifier: 
   lines:
-  - speakerName: Mey Mey
+  - portrait: {fileID: 21300000, guid: b1756264e072a9b499da3d2a9dab68be, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Mey Mey
     dialogueText: Yay my first pc
+    portraitAnimation: 1
+  nextForcedCustomer: {fileID: 0}

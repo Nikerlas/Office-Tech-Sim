@@ -13,18 +13,19 @@ MonoBehaviour:
   m_Name: CP2_Intro
   m_EditorClassIdentifier: 
   lines:
-  - portrait: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: 01d5716ec8193964788e938e7c8113e9, type: 3}
+    portraitSide: 1
+    usePlayerPortrait: 0
+    playerExpression: 0
     speakerName: 
-    dialogueText: 'Before the awards.
-
-      Before the reputation.
-
-      Before
-      becoming the most trusted PC shop in Kuraton...'
-  - portrait: {fileID: 0}
+    dialogueText: Before the awards.Before the reputation.Before becoming the most
+      trusted PC shop in Kuraton...
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: 67e027a2623a3cb4bafbeb3e69a83690, type: 3}
+    portraitSide: 1
+    usePlayerPortrait: 0
+    playerExpression: 0
     speakerName: 
-    dialogueText: 'There was only a small store.
-
-
-      And a dream.'
+    dialogueText: There was only a small store.And a dream.
+    portraitAnimation: 0
   nextForcedCustomer: {fileID: 0}
