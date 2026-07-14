@@ -10,49 +10,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dafe6fd2a080d2479c550f872806afe, type: 3}
-  m_Name: Bika_start
+  m_Name: MeyMey_Intro1
   m_EditorClassIdentifier: 
   lines:
-  - portrait: {fileID: 21300000, guid: 86ec0542a31381d4da1504ae6f69d1f6, type: 3}
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 2
+    speakerName: '{PLAYER}'
+    dialogueText: Welcome to the shop, what can I help you?
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: b1756264e072a9b499da3d2a9dab68be, type: 3}
     portraitSide: 0
     usePlayerPortrait: 0
     playerExpression: 0
-    speakerName: Bika
-    dialogueText: Hey! Got any new CPUs in stock?
+    speakerName: Mey Mey
+    dialogueText: 'hi cutieee '
     portraitAnimation: 0
   - portrait: {fileID: 0}
     portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 0
     speakerName: '{PLAYER}'
-    dialogueText: Morning, Bika. Looking for another upgrade already?
+    dialogueText: what can i help
     portraitAnimation: 0
-  - portrait: {fileID: 21300000, guid: f4f7650593997d84391800055df136fd, type: 3}
+  - portrait: {fileID: 21300000, guid: b1756264e072a9b499da3d2a9dab68be, type: 3}
     portraitSide: 0
     usePlayerPortrait: 0
     playerExpression: 0
-    speakerName: Bika
-    dialogueText: Technology never waits.
+    speakerName: Mey Mey
+    dialogueText: can yyoouu make my pc <3
     portraitAnimation: 0
   - portrait: {fileID: 0}
     portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 1
     speakerName: '{PLAYER}'
-    dialogueText: What are you upgrading this time?
+    dialogueText: ofcc i cann
     portraitAnimation: 0
-  - portrait: {fileID: 21300000, guid: 8a559d91122518c499f71c7eb637da35, type: 3}
-    portraitSide: 0
-    usePlayerPortrait: 0
-    playerExpression: 0
-    speakerName: Bika
-    dialogueText: My PC
-    portraitAnimation: 0
-  - portrait: {fileID: 0}
-    portraitSide: 2
-    usePlayerPortrait: 1
-    playerExpression: 4
-    speakerName: '{PLAYER}'
-    dialogueText: Ok process
-    portraitAnimation: 1
   nextForcedCustomer: {fileID: 0}

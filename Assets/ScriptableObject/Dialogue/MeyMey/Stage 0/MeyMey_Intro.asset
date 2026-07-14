@@ -25,13 +25,13 @@ MonoBehaviour:
     usePlayerPortrait: 0
     playerExpression: 0
     speakerName: Mey Mey
-    dialogueText: I want to build a PC, can you build me one?
+    dialogueText: I want to build a PC, can you build me one? prewty
     portraitAnimation: 0
   - portrait: {fileID: 0}
     portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 2
     speakerName: '{PLAYER}'
-    dialogueText: Sure
+    dialogueText: Sure , miss
     portraitAnimation: 0
   nextForcedCustomer: {fileID: 0}

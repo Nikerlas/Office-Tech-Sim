@@ -29,13 +29,13 @@ MonoBehaviour:
     portraitAnimation: 0
   - portrait: {fileID: 21300000, guid: 3b843148ad89b1e4789883b6905035bd, type: 3}
     portraitSide: 0
-    usePlayerPortrait: 1
+    usePlayerPortrait: 0
     playerExpression: 1
     speakerName: Supri
     dialogueText: A PC ,One that isn't chosen because "it has pretty RGB."
     portraitAnimation: 0
   - portrait: {fileID: 0}
-    portraitSide: 0
+    portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 1
     speakerName: '{PLAYER}'

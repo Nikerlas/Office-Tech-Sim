@@ -20,4 +20,18 @@ MonoBehaviour:
     speakerName: Mey Mey
     dialogueText: Yay my first pc
     portraitAnimation: 1
+  - portrait: {fileID: 21300000, guid: b1756264e072a9b499da3d2a9dab68be, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Mey Mey
+    dialogueText: Nice!Thanksaloottt bestieee
+    portraitAnimation: 1
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 0
+    speakerName: '{PLAYER}'
+    dialogueText: Urwell sis
+    portraitAnimation: 1
   nextForcedCustomer: {fileID: 0}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Raden Sambung_stage1
   m_EditorClassIdentifier: 
   customerName: Raden Sambung
-  introDialogue: {fileID: 11400000, guid: 7b0dfaa98bf2cfb458ea4912cb771fd4, type: 2}
+  introDialogue: {fileID: 11400000, guid: 3635f0e84dd45114f99f884b548d29b8, type: 2}
   buildTask: {fileID: 11400000, guid: b10e36509403e0d43b364d32730b65bd, type: 2}
-  resultDialogue: {fileID: 11400000, guid: caad07cf864e7604f8aa4df6e11cbc17, type: 2}
+  resultDialogue: {fileID: 11400000, guid: e31f556a38daaa942acbb6fd55dfa154, type: 2}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dafe6fd2a080d2479c550f872806afe, type: 3}
-  m_Name: LilBah_start
+  m_Name: LilBah_start1
   m_EditorClassIdentifier: 
   lines:
   - portrait: {fileID: 21300000, guid: 8023b0cf096fffe4d9c5b31b66a94541, type: 3}
@@ -18,63 +18,55 @@ MonoBehaviour:
     usePlayerPortrait: 0
     playerExpression: 0
     speakerName: Lil B.A.H
-    dialogueText: Yo, wassup bro? This the PC spot, right?
+    dialogueText: Yo, bro!
     portraitAnimation: 0
   - portrait: {fileID: 0}
     portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 4
     speakerName: '{PLAYER}'
-    dialogueText: "Yeah man, welcome. What you lookin\u2019 for?"
+    dialogueText: What's up?
     portraitAnimation: 0
   - portrait: {fileID: 21300000, guid: f396bf5ae76cf204a8350063c9a516b9, type: 3}
     portraitSide: 0
     usePlayerPortrait: 0
     playerExpression: 0
     speakerName: Lil B.A.H
-    dialogueText: "Aight, so\u2026 I\u2019m tryna build a fire PC."
-    portraitAnimation: 0
-  - portrait: {fileID: 21300000, guid: 8023b0cf096fffe4d9c5b31b66a94541, type: 3}
-    portraitSide: 0
-    usePlayerPortrait: 0
-    playerExpression: 0
-    speakerName: Lil B.A.H
-    dialogueText: "Somethin\u2019 crazy fast.\nI be makin\u2019 music, streamin\u2019,
-      maybe some games too."
+    dialogueText: I think... I messed up.
     portraitAnimation: 0
   - portrait: {fileID: 0}
     portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 4
     speakerName: '{PLAYER}'
-    dialogueText: whats ur budget?
+    dialogueText: What happened?
     portraitAnimation: 0
   - portrait: {fileID: 21300000, guid: 8023b0cf096fffe4d9c5b31b66a94541, type: 3}
     portraitSide: 0
     usePlayerPortrait: 0
     playerExpression: 0
     speakerName: Lil B.A.H
-    dialogueText: "I just want it lookin\u2019 expensive and fast as hell."
+    dialogueText: Some dude online said downloading more RAM would make my PC faster.
     portraitAnimation: 0
   - portrait: {fileID: 0}
     portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 0
     speakerName: '{PLAYER}'
-    dialogueText: You know anything about PCs?
+    dialogueText: ...You can't download RAM.
     portraitAnimation: 0
   - portrait: {fileID: 21300000, guid: 50d8f5b2ffd54cb4e8a37f1b10ac6739, type: 3}
     portraitSide: 0
     usePlayerPortrait: 0
     playerExpression: 0
     speakerName: Lil B.A.H
-    dialogueText: Nothin , Just make it LIT
+    dialogueText: up that shiy broo
     portraitAnimation: 0
   - portrait: {fileID: 0}
     portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 1
     speakerName: '{PLAYER}'
-    dialogueText: "Got you. I\u2019ll build you somethin\u2019 clean and powerful."
+    dialogueText: aight bet
     portraitAnimation: 0
   nextForcedCustomer: {fileID: 0}

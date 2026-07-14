@@ -10,42 +10,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dafe6fd2a080d2479c550f872806afe, type: 3}
-  m_Name: NPC_Intro
+  m_Name: LilBah_end1
   m_EditorClassIdentifier: 
   lines:
   - portrait: {fileID: 0}
     portraitSide: 2
     usePlayerPortrait: 1
-    playerExpression: 0
+    playerExpression: 1
     speakerName: '{PLAYER}'
-    dialogueText: Welcome, What can I help you?
+    dialogueText: Everything's fixed.
     portraitAnimation: 0
-  - portrait: {fileID: 21300000, guid: 9798e559783b92f439abf406b7830251, type: 3}
+  - portrait: {fileID: 21300000, guid: 7bbd044a39de1e641a09fedae293a11a, type: 3}
     portraitSide: 0
     usePlayerPortrait: 0
     playerExpression: 0
-    speakerName: Office Man
-    dialogueText: sooo tiered with all this stuff
-    portraitAnimation: 0
-  - portrait: {fileID: 0}
-    portraitSide: 2
-    usePlayerPortrait: 1
-    playerExpression: 2
-    speakerName: '{PLAYER}'
-    dialogueText: sir u okay??
-    portraitAnimation: 0
-  - portrait: {fileID: 21300000, guid: 9798e559783b92f439abf406b7830251, type: 3}
-    portraitSide: 0
-    usePlayerPortrait: 0
-    playerExpression: 2
-    speakerName: Office Man
-    dialogueText: nothin, can i have a pc for watch any movie?
+    speakerName: Lil B.A.H
+    dialogueText: Ayy, this thing smooth!
     portraitAnimation: 0
   - portrait: {fileID: 0}
     portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 1
     speakerName: '{PLAYER}'
-    dialogueText: got you sir
+    dialogueText: No more fake downloads.
+    portraitAnimation: 0
+  - portrait: {fileID: 21300000, guid: 8023b0cf096fffe4d9c5b31b66a94541, type: 3}
+    portraitSide: 0
+    usePlayerPortrait: 0
+    playerExpression: 0
+    speakerName: Lil B.A.H
+    dialogueText: Nah, I'm done trusting random dudes online.
+    portraitAnimation: 0
+  - portrait: {fileID: 0}
+    portraitSide: 2
+    usePlayerPortrait: 1
+    playerExpression: 1
+    speakerName: '{PLAYER}'
+    dialogueText: No problem, bro. Enjoy the ram.
     portraitAnimation: 0
   nextForcedCustomer: {fileID: 0}

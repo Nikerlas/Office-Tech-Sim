@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dafe6fd2a080d2479c550f872806afe, type: 3}
-  m_Name: Raden Sambung_end
+  m_Name: Raden Sambung_end1
   m_EditorClassIdentifier: 
   lines:
   - portrait: {fileID: 0}
@@ -18,30 +18,27 @@ MonoBehaviour:
     usePlayerPortrait: 1
     playerExpression: 0
     speakerName: '{PLAYER}'
-    dialogueText: "Your PC\u2019s done, sir."
+    dialogueText: Here it is.
     portraitAnimation: 0
   - portrait: {fileID: 21300000, guid: 231fadb4006ee09429fd975412378628, type: 3}
     portraitSide: 0
     usePlayerPortrait: 0
     playerExpression: 0
     speakerName: Raden Sambung
-    dialogueText: "Magnificent\u2026 truly a machine worthy of admiration."
+    dialogueText: Splendid. Such craftsmanship deserves admiration.
     portraitAnimation: 0
   - portrait: {fileID: 0}
     portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 1
     speakerName: '{PLAYER}'
-    dialogueText: Haha, enjoy the setup.
+    dialogueText: Hope you enjoy it.
     portraitAnimation: 0
   - portrait: {fileID: 21300000, guid: 231fadb4006ee09429fd975412378628, type: 3}
     portraitSide: 0
     usePlayerPortrait: 0
     playerExpression: 0
     speakerName: Raden Sambung
-    dialogueText: 'You have my gratitude, my friend.
-
-      Your craftsmanship shall
-      not be forgotten.'
+    dialogueText: You have once again earned my gratitude.
     portraitAnimation: 1
   nextForcedCustomer: {fileID: 0}

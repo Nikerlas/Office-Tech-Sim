@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SUBI_stage 0
   m_EditorClassIdentifier: 
   customerName: Bika
-  introDialogue: {fileID: 11400000, guid: c4ad6eb4659a86247a9670249f3772cf, type: 2}
+  introDialogue: {fileID: 11400000, guid: e89c19d9df6c8364392189d752ee5189, type: 2}
   buildTask: {fileID: 11400000, guid: 1bc6098757f831944b810fd6e940d83a, type: 2}
   resultDialogue: {fileID: 11400000, guid: 1a24042664a8b0d4b9fea7b9aed08636, type: 2}

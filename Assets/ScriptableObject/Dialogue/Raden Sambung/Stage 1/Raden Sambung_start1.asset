@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dafe6fd2a080d2479c550f872806afe, type: 3}
-  m_Name: Raden Sambung_start
+  m_Name: Raden Sambung_start1
   m_EditorClassIdentifier: 
   lines:
   - portrait: {fileID: 21300000, guid: 31cd273c714172c4a89fc5bdc8242159, type: 3}
@@ -18,40 +18,35 @@ MonoBehaviour:
     usePlayerPortrait: 0
     playerExpression: 0
     speakerName: Raden Sambung
-    dialogueText: 'Good day, shopkeeper.
-
-      Is this where one acquires a PC?'
+    dialogueText: Greetings my good friend.
     portraitAnimation: 1
   - portrait: {fileID: 0}
     portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 1
     speakerName: '{PLAYER}'
-    dialogueText: Yep. You looking to build one?
+    dialogueText: Looking for  upgrade?
     portraitAnimation: 0
   - portrait: {fileID: 21300000, guid: 231fadb4006ee09429fd975412378628, type: 3}
     portraitSide: 0
     usePlayerPortrait: 0
     playerExpression: 0
     speakerName: Raden Sambung
-    dialogueText: 'Indeed.
-
-      My curiosity toward these modern machines grows
-      stronger each day.'
+    dialogueText: My thirst for knowledge has yet to be satisfied.
     portraitAnimation: 0
   - portrait: {fileID: 0}
     portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 4
     speakerName: '{PLAYER}'
-    dialogueText: What you gonna use it for?
+    dialogueText: Anything in particular?
     portraitAnimation: 0
   - portrait: {fileID: 21300000, guid: 36c0a0d9341166e488d5f7862c5ce6a5, type: 3}
     portraitSide: 0
     usePlayerPortrait: 0
     playerExpression: 0
     speakerName: Raden Sambung
-    dialogueText: "Music, knowledge, art\u2026 perhaps a few modern games as well."
+    dialogueText: Rendering worthy of this marvelous machine.
     portraitAnimation: 0
   - portrait: {fileID: 0}
     portraitSide: 2
@@ -65,16 +60,13 @@ MonoBehaviour:
     usePlayerPortrait: 0
     playerExpression: 1
     speakerName: Raden Sambung
-    dialogueText: 'Dont talk about any budget. I already have the square boxes
-
-      Quality
-      and elegance matter far more.'
+    dialogueText: Whichever grants the finest experience.
     portraitAnimation: 0
   - portrait: {fileID: 0}
     portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 1
     speakerName: '{PLAYER}'
-    dialogueText: "Got it. I\u2019ll build something clean and powerful."
+    dialogueText: I think I know just the one.
     portraitAnimation: 0
   nextForcedCustomer: {fileID: 0}

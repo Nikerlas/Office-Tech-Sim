@@ -24,7 +24,7 @@ MonoBehaviour:
     portraitSide: 0
     usePlayerPortrait: 0
     playerExpression: 4
-    speakerName: Titiek
+    speakerName: Supri
     dialogueText: Excellent.
     portraitAnimation: 1
   - portrait: {fileID: 0}
@@ -52,7 +52,7 @@ MonoBehaviour:
     portraitAnimation: 1
   - portrait: {fileID: 0}
     portraitSide: 2
-    usePlayerPortrait: 0
+    usePlayerPortrait: 1
     playerExpression: 1
     speakerName: '{PLAYER}'
     dialogueText: That's... actually good advice.Thanks sir

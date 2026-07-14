@@ -46,7 +46,7 @@ MonoBehaviour:
     portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 1
-    speakerName: Bika
+    speakerName: '{PLAYER}'
     dialogueText: Thanks, Bika.
     portraitAnimation: 1
   - portrait: {fileID: 21300000, guid: f4f7650593997d84391800055df136fd, type: 3}

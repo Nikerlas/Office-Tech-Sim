@@ -20,3 +20,4 @@ MonoBehaviour:
   isStoryCustomer: 1
   stages:
   - {fileID: 11400000, guid: 8945c50e750849b41bf5f7e39365abac, type: 2}
+  - {fileID: 11400000, guid: 8945c50e750849b41bf5f7e39365abac, type: 2}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Mey Mey_stage 1
   m_EditorClassIdentifier: 
   customerName: Mey Mey
-  introDialogue: {fileID: 11400000, guid: 06b665eafbe9b964b86eb391ca642aa2, type: 2}
+  introDialogue: {fileID: 11400000, guid: 3dbd2292a9ed6a9499fff20c2d3c7bbe, type: 2}
   buildTask: {fileID: 11400000, guid: b10e36509403e0d43b364d32730b65bd, type: 2}
-  resultDialogue: {fileID: 11400000, guid: 370a9e48ab7c01f46a642f46481aba78, type: 2}
+  resultDialogue: {fileID: 11400000, guid: 7c0760ea8c65e1f42843d9a197334e74, type: 2}

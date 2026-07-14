@@ -43,7 +43,7 @@ MonoBehaviour:
       this for me, fr."
     portraitAnimation: 0
   - portrait: {fileID: 0}
-    portraitSide: 0
+    portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 1
     speakerName: '{PLAYER}'
