@@ -35,7 +35,7 @@ MonoBehaviour:
     dialogueText: Technology never waits.
     portraitAnimation: 0
   - portrait: {fileID: 0}
-    portraitSide: 1
+    portraitSide: 2
     usePlayerPortrait: 1
     playerExpression: 1
     speakerName: '{PLAYER}'

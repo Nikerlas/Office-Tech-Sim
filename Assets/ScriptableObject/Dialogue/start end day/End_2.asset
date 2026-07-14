@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - portrait: {fileID: 0}
-    portraitSide: 0
+    portraitSide: 1
     usePlayerPortrait: 1
     playerExpression: 1
     speakerName: '{PLAYER}'

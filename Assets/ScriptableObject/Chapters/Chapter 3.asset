@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chapter 3
   m_EditorClassIdentifier: 
   showCharacterSetup: 0
-  chapterName: Perjalanan di Kuraton
+  chapterName: Ambisi Baru
   targetMoney: 3000
   customerPool:
   - {fileID: 11400000, guid: 5d5cf9d1e253c79459711cd447bb2f0c, type: 2}
