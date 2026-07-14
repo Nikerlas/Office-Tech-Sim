@@ -9,6 +9,23 @@ public class ChapterCompleteManager : MonoBehaviour
 
         GameManager.Instance.currentChapterIndex++;
 
+        if (
+            GameManager.Instance.currentChapterIndex
+            >=
+            GameManager.Instance.chapters.Count
+        )
+        {
+            SceneManager.LoadScene(
+                "Credit"
+            );
+
+            Debug.Log(
+                "All chapters completed. Game over."
+            );
+
+            return;
+        }
+
         GameManager.Instance.currentDayIndex = 0;
 
         GameManager.Instance.currentCustomerIndex = 0;

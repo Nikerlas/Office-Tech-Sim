@@ -741,6 +741,7 @@ MonoBehaviour:
   playerFemale: {fileID: 11400000, guid: 5bb629045034797409b3e4b5cf96fb42, type: 2}
   todayCustomers: []
   forcedCustomerToday: {fileID: 0}
+  customerProgress: []
   currentChapterIndex: 0
   currentDayIndex: 0
   currentCustomerIndex: 0
@@ -748,6 +749,7 @@ MonoBehaviour:
   chapters:
   - {fileID: 11400000, guid: 24bdfd4c5dd47874fbb98be280f47584, type: 2}
   - {fileID: 11400000, guid: 7dc501bca78046e409205c1465faec02, type: 2}
+  - {fileID: 11400000, guid: c039f239b19a6f443bb3df3c73197920, type: 2}
   currentChapter: {fileID: 11400000, guid: 24bdfd4c5dd47874fbb98be280f47584, type: 2}
   currentTask: {fileID: 0}
   returningFromAssembly: 0

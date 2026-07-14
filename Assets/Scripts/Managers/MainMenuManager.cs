@@ -35,6 +35,13 @@ public class MainMenuManager : MonoBehaviour
         );
     }
 
+    public void Credit()
+    {
+        SceneManager.LoadScene(
+            "Credit"
+        );
+    }
+
     public void QuitGame()
     {
         Application.Quit();

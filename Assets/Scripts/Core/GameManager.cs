@@ -61,6 +61,14 @@ public class GameManager : MonoBehaviour
     {
         currentChapter =
             chapters[currentChapterIndex];
+
+        if(currentChapterIndex >= chapters.Count)
+{
+            SceneTransitionManager.Instance
+                .FadeToScene("Credit");
+
+            return;
+}    
     }
 
     void DayComplete()

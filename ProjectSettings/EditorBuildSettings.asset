@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay/ChapterCompleteScene.unity
     guid: 23857a0b10cc53840a83324b28dd1765
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Credit.unity
+    guid: 4115a4a674f86374fb6578031c2772ed
   m_configObjects: {}
