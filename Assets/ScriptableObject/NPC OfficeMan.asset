@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fee4c5cdefa1bed4b8339e912f0a27a0, type: 3}
-  m_Name: Mey Mey
+  m_Name: NPC OfficeMan
   m_EditorClassIdentifier: 
-  customerName: Mey Mey
+  customerName: Office Man
   startingPC:
     cpu: 
     ramSize: 0
     gpu: 
-  isStoryCustomer: 1
+  isStoryCustomer: 0
   stages:
-  - {fileID: 11400000, guid: 40f0abd82bdc75d4497ac4f832610240, type: 2}
-  - {fileID: 11400000, guid: 40f0abd82bdc75d4497ac4f832610240, type: 2}
+  - {fileID: 11400000, guid: 4195ff768f7ecd54298dbc0740b59809, type: 2}

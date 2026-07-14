@@ -20,6 +20,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5d5cf9d1e253c79459711cd447bb2f0c, type: 2}
   - {fileID: 11400000, guid: b494322c1c64bc34fb773d624108442a, type: 2}
   - {fileID: 11400000, guid: b2e1d4b840897834b92b480f2cf0f801, type: 2}
+  - {fileID: 11400000, guid: 94c8fd06bd648074692f5c5d847d3092, type: 2}
   chapterIntroDialogue: {fileID: 11400000, guid: 4714faf315d84f444ba647762fee94a3, type: 2}
   chapterCompleteDialogue: {fileID: 11400000, guid: 8fda21b3e667a80479b05fa7864912d5, type: 2}
   startDayDialogues:
